@@ -1,0 +1,6166 @@
+diff -Nur xv6-cs550-2016,1s-p1-baseline/cs550_syscall.c xv6-cs550-2016,1s-p2-working/cs550_syscall.c
+--- xv6-cs550-2016,1s-p1-baseline/cs550_syscall.c	1969-12-31 19:00:00.000000000 -0500
++++ xv6-cs550-2016,1s-p2-working/cs550_syscall.c	2016-03-11 18:31:32.731826000 -0500
+@@ -0,0 +1,1754 @@
++#include "defs.h"
++#include "syscall.h"
++//proc part
++int ls_ls_call00(void)
++{
++  return 0;
++}
++
++int ls_ls_call01(void)
++{
++  return 1;
++}
++int ls_ls_call02(void)
++{
++  return 1;
++}
++int ls_ls_call03()
++{
++  return 3;
++}
++int ls_ls_call04()
++{
++  return 4;
++}
++int ls_ls_call05()
++{
++  return 5;
++}
++int ls_ls_call06()
++{
++  return 6;
++}
++int ls_ls_call07()
++{
++  return 7;
++}
++int ls_ls_call08()
++{
++  return 8;
++}
++int ls_ls_call09()
++{
++  return 9;
++}
++int ls_ls_call10()
++{
++  return 10;
++}
++int ls_ls_call11()
++{
++  return 11;
++}
++int ls_ls_call12()
++{
++  return 12;
++}
++int ls_ls_call13()
++{
++	  return 13;
++}
++int ls_ls_call14()
++{
++  return 14;
++}
++int ls_ls_call15()
++{
++  return 15;
++}
++int ls_ls_call16()
++{
++  return 16;
++}
++int ls_ls_call17()
++{
++  return 17;
++}
++int ls_ls_call18()
++{
++  return 18;
++}
++int ls_ls_call19()
++{
++  return 19;
++}
++int ls_ls_call20()
++{
++  return 20;
++}
++
++int ls_ls_call21()
++{
++  return 21;
++}
++int ls_ls_call22()
++{
++  return 22;
++}
++int ls_ls_call23()
++{
++  return 23;
++}
++int ls_ls_call24()
++{
++  return 24;
++}
++int ls_ls_call25()
++{
++  return 25;
++}
++int ls_ls_call26()
++{
++  return 26;
++}
++int ls_ls_call27()
++{
++  return 27;
++}
++int ls_ls_call28()
++{
++  return 28;
++}
++int ls_ls_call29()
++{
++  return 29;
++}
++int ls_ls_call30()
++{
++  return 30;
++}
++int ls_ls_call31()
++{
++  return 31;
++}
++int ls_ls_call32()
++{
++  return 32;
++}
++int ls_ls_call33()
++{
++  return 33;
++}
++int ls_ls_call34()
++{
++  return 34;
++}
++int ls_ls_call35()
++{
++  return 35;
++}
++int ls_ls_call36()
++{
++  return 36;
++}
++int ls_ls_call37()
++{
++  return 37;
++}
++int ls_ls_call38()
++{
++  return 38;
++}
++int ls_ls_call39()
++{
++  return 39;
++}
++int ls_ls_call40()
++{
++  return 40;
++}
++int ls_ls_call41()
++{
++  return 41;
++}
++int ls_ls_call42()
++{
++  return 42;
++}
++int ls_ls_call43()
++{
++  return 43;
++}
++int ls_ls_call44()
++{
++  return 44;
++}
++int ls_ls_call45()
++{
++  return 45;
++}
++int ls_ls_call46()
++{
++  return 46;
++}
++int ls_ls_call47()
++{
++  return 47;
++}
++int ls_ls_call48()
++{
++  return 48;
++}
++int ls_ls_call49()
++{
++  return 49;
++}
++int ls_ls_call50()
++{
++  return 50;
++}
++
++int ht_ht_call00()
++{
++ return 0;
++}
++
++int ht_ht_call01()
++{
++ return 01;
++}
++int ht_ht_call02()
++{
++  return 2;
++}
++int ht_ht_call03()
++{
++  return 3;
++}
++int ht_ht_call04()
++{
++  return 4;
++}
++int ht_ht_call05()
++{
++  return 5;
++}
++int ht_ht_call06()
++{
++  return 6;
++}
++int ht_ht_call07()
++{
++  return 7;
++}
++int ht_ht_call08()
++{
++  return 8;
++}
++int ht_ht_call09()
++{
++  return 9;
++}
++int ht_ht_call10()
++{
++  return 10;
++}
++int ht_ht_call11()
++{
++  return 11;
++}
++int ht_ht_call12()
++{
++  return 12;
++}
++int ht_ht_call13()
++{
++  return 13;
++}
++int ht_ht_call14()
++{
++  return 14;
++}
++int ht_ht_call15()
++{
++  return 15;
++}
++int ht_ht_call16()
++{
++  return 16;
++}
++int ht_ht_call17()
++{
++  return 17;
++}
++int ht_ht_call18()
++{
++  return 18;
++}
++int ht_ht_call19()
++{
++  return 19;
++}
++int ht_ht_call20()
++{
++  return 20;
++}
++
++int ht_ht_call21()
++{
++  return 21;
++}
++int ht_ht_call22()
++{
++  return 22;
++}
++int ht_ht_call23()
++{
++  return 23;
++}
++int ht_ht_call24()
++{
++  return 24;
++}
++int ht_ht_call25()
++{
++  return 25;
++}
++int ht_ht_call26()
++{
++  return 26;
++}
++int ht_ht_call27()
++{
++  return 27;
++}
++int ht_ht_call28()
++{
++  return 28;
++}
++int ht_ht_call29()
++{
++  return 29;
++}
++int ht_ht_call30()
++{
++  return 30;
++}
++int ht_ht_call31()
++{
++  return 31;
++}
++int ht_ht_call32()
++{
++  return 32;
++}
++int ht_ht_call33()
++{
++  return 33;
++}
++int ht_ht_call34()
++{
++  return 34;
++}
++int ht_ht_call35()
++{
++  return 35;
++}
++int ht_ht_call36()
++{
++  return 36;
++}
++int ht_ht_call37()
++{
++  return 37;
++}
++int ht_ht_call38()
++{
++  return 38;
++}
++int ht_ht_call39()
++{
++  return 39;
++}
++int ht_ht_call40()
++{
++  return 40;
++}
++int ht_ht_call41()
++{
++  return 41;
++}
++int ht_ht_call42()
++{
++  return 42;
++}
++int ht_ht_call43()
++{
++  return 43;
++}
++int ht_ht_call44()
++{
++  return 44;
++}
++int ht_ht_call45()
++{
++  return 45;
++}
++int ht_ht_call46()
++{
++  return 46;
++}
++int ht_ht_call47()
++{
++  return 47;
++}
++int ht_ht_call48()
++{
++  return 48;
++}
++int ht_ht_call49()
++{
++  return 49;
++}
++int ht_ht_call50()
++{
++  return 50;
++}
++
++static int (*lscalls[])(void) = {
++ls_ls_call00,
++ls_ls_call01,
++ls_ls_call02,
++ls_ls_call03,
++ls_ls_call04,
++ls_ls_call05,
++ls_ls_call06,
++ls_ls_call07,
++ls_ls_call08,
++ls_ls_call09,
++ls_ls_call10,
++ls_ls_call11,
++ls_ls_call12,
++ls_ls_call13,
++ls_ls_call14,
++ls_ls_call15,
++ls_ls_call16,
++ls_ls_call17,
++ls_ls_call18,
++ls_ls_call19,
++ls_ls_call20,
++ls_ls_call21,
++ls_ls_call22,
++ls_ls_call23,
++ls_ls_call24,
++ls_ls_call25,
++ls_ls_call26,
++ls_ls_call27,
++ls_ls_call28,
++ls_ls_call29,
++ls_ls_call30,
++ls_ls_call31,
++ls_ls_call32,
++ls_ls_call33,
++ls_ls_call34,
++ls_ls_call35,
++ls_ls_call36,
++ls_ls_call37,
++ls_ls_call38,
++ls_ls_call39,
++ls_ls_call40,
++ls_ls_call41,
++ls_ls_call42,
++ls_ls_call43,
++ls_ls_call44,
++ls_ls_call45,
++ls_ls_call46,
++ls_ls_call47,
++ls_ls_call48,
++ls_ls_call49,
++ls_ls_call50,
++};
++
++static int (*htcalls[])(void)=
++{
++ht_ht_call00,
++ht_ht_call01,
++ht_ht_call02,
++ht_ht_call03,
++ht_ht_call04,
++ht_ht_call05,
++ht_ht_call06,
++ht_ht_call07,
++ht_ht_call08,
++ht_ht_call09,
++ht_ht_call10,
++ht_ht_call11,
++ht_ht_call12,
++ht_ht_call13,
++ht_ht_call14,
++ht_ht_call15,
++ht_ht_call16,
++ht_ht_call17,
++ht_ht_call18,
++ht_ht_call19,
++ht_ht_call20,
++ht_ht_call21,
++ht_ht_call22,
++ht_ht_call23,
++ht_ht_call24,
++ht_ht_call25,
++ht_ht_call26,
++ht_ht_call27,
++ht_ht_call28,
++ht_ht_call29,
++ht_ht_call30,
++ht_ht_call31,
++ht_ht_call32,
++ht_ht_call33,
++ht_ht_call34,
++ht_ht_call35,
++ht_ht_call36,
++ht_ht_call37,
++ht_ht_call38,
++ht_ht_call39,
++ht_ht_call40,
++ht_ht_call41,
++ht_ht_call42,
++ht_ht_call43,
++ht_ht_call44,
++ht_ht_call45,
++ht_ht_call46,
++ht_ht_call47,
++ht_ht_call48,
++ht_ht_call49,
++ht_ht_call50,
++};
++
++int
++atoi(char *s)
++{
++  int n;
++
++  n = 0;
++  while('0' <= *s && *s <= '9')
++    n = n*10 + *s++ - '0';
++  return n;
++}
++
++int linear(char* fcall)
++{
++  int id,i,val,lv1,lv2;
++  char temp[2];
++  int fparray[50];
++  for(i=0;i<50;i++)
++  {
++	fparray[i]=i+1;
++  }
++	if(fcall[0]=='l'&&fcall[1]=='s'&&fcall[2]=='_'&&fcall[3]=='c'&&fcall[4]=='a'&&fcall[5]=='l'&&fcall[6]=='l'&&fcall[9]=='\0')
++	{
++	  temp[0]=fcall[7];
++	  temp[1]='\0';
++	  lv1=atoi(temp);
++	  temp[0]=fcall[8];
++	  temp[1]='\0';
++	  lv2=atoi(temp);
++	  if(lv1>=0&&lv1<5&&lv2>=0&&lv2<=9)
++	  {
++		id=lv1*10;
++		id=id+lv2;
++	  }
++	  else if(lv1==5 && lv2==0)
++	  {
++		id=lv1*10;
++	  }
++	
++	  if(id > 0 && id < NELEM(lscalls) && lscalls[id]) 
++	  {
++			for(i=0;i<50;i++)
++			{
++			   if(fparray[i]==id)
++			   {
++			    val = lscalls[id]();
++			    return val;		 
++			   }
++			}
++		        
++	  }
++	} 
++		cprintf("\nWrong system call please check the parameter passed!\n");
++        	return -1;
++}
++int hashing(int n)
++{ 
++ return n/10;
++}
++int hash(char* fcall)
++{	
++	int id = 0, i, j, val, lv1, lv2, key;
++	char temp[2];
++	int fparray[10][50];
++	for (i = 0; i<=50; i++)
++	{
++		j = i/10;
++		fparray[j][i%10] = i;
++	}
++	if (fcall[0] == 'h'&&fcall[1] == 't'&&fcall[2] == '_'&&fcall[3] == 'c'&&fcall[4] == 'a'&&fcall[5] == 'l'&&fcall[6] == 'l'&&fcall[9] == '\0')
++	{
++		temp[0] = fcall[7];
++		temp[1] = '\0';
++		lv1 = atoi(temp);
++		temp[0] = fcall[8];
++		temp[1] = '\0';
++		lv2 = atoi(temp);
++		if (lv1 >= 0 && lv1<5 && lv2 >= 0 && lv2 <= 9)
++		{
++			id = lv1 * 10;
++			id = id + lv2;
++		}
++		else if (lv1 == 5 && lv2 == 0)
++		{
++			id = lv1 * 10;
++		}
++	
++		key = hashing(id);
++		for (i =0; i<=10; i++)
++		{
++			if (fparray[key][i] == id)
++			{
++				val = htcalls[id]();
++				return val;
++			}
++		}
++        }
++	cprintf("\nWrong system call please check the parameter passed!\n");
++	return -1;
++}
++
++//sysproc part
++int sys_ls_call01(void)
++{
++  char* fcall;
++  if (argptr(0, (char **) &fcall, sizeof(char)*10) < 0)
++  return -1;
++  
++  return linear(fcall);
++}
++int 
++sys_ls_call02(void)
++{
++  char* fcall;
++  if (argptr(0, (char **) &fcall, (sizeof(char)*10)) < 0)
++  return -1;
++  int i= linear(fcall);
++  return i;
++}
++int 
++sys_ls_call03(void)
++{
++  char* fcall;
++  if (argptr(0, (char **) &fcall, (sizeof(char)*10)) < 0)
++  return -1;
++ 
++  return linear(fcall);
++}
++int 
++sys_ls_call04(void)
++{
++  char* fcall;
++  if (argptr(0, (char **) &fcall, (sizeof(char)*10)) < 0)
++  return -1;
++
++  return linear(fcall);
++}
++int 
++sys_ls_call05(void)
++{
++  char* fcall;
++  if (argptr(0, (char **) &fcall, (sizeof(char)*10)) < 0)
++  return -1;
++ 
++  return linear(fcall);
++}
++int 
++sys_ls_call06(void)
++{
++  char* fcall;
++  if (argptr(0, (char **) &fcall, (sizeof(char)*10)) < 0)
++  return -1;
++  
++  return linear(fcall);
++}
++int 
++sys_ls_call07(void)
++{
++  char* fcall;
++  if (argptr(0, (char **) &fcall, (sizeof(char)*10)) < 0)
++  return -1;
++
++  return linear(fcall);
++}
++int 
++sys_ls_call08(void)
++{
++  char* fcall;
++  if (argptr(0, (char **) &fcall, (sizeof(char)*10)) < 0)
++  return -1;
++ 
++  return linear(fcall);
++}
++int 
++sys_ls_call09(void)
++{
++  char* fcall;
++  if (argptr(0, (char **) &fcall, (sizeof(char)*10)) < 0)
++  return -1;
++ 
++  return linear(fcall);
++}
++int 
++sys_ls_call10(void)
++{
++  char* fcall;
++  if (argptr(0, (char **) &fcall, (sizeof(char)*10)) < 0)
++  return -1;
++ 
++  return linear(fcall);
++}
++int 
++sys_ls_call11(void)
++{
++  char* fcall;
++  if (argptr(0, (char **) &fcall, (sizeof(char)*10)) < 0)
++  return -1;
++ 
++  return linear(fcall);
++}
++int 
++sys_ls_call12(void)
++{
++  char* fcall;
++  if (argptr(0, (char **) &fcall, (sizeof(char)*10)) < 0)
++  return -1;
++ 
++  return linear(fcall);
++}
++int 
++sys_ls_call13(void)
++{
++  char* fcall;
++  if (argptr(0, (char **) &fcall, (sizeof(char)*10)) < 0)
++  return -1;
++ 
++  return linear(fcall);
++}
++int 
++sys_ls_call14(void)
++{
++  char* fcall;
++  if (argptr(0, (char **) &fcall, (sizeof(char)*10)) < 0)
++  return -1;
++ 
++  return linear(fcall);
++}
++int 
++sys_ls_call15(void)
++{
++  char* fcall;
++  if (argptr(0, (char **) &fcall, (sizeof(char)*10)) < 0)
++  return -1;
++ 
++  return linear(fcall);
++}
++int 
++sys_ls_call16(void)
++{
++  char* fcall;
++  if (argptr(0, (char **) &fcall, (sizeof(char)*10)) < 0)
++  return -1;
++ 
++  return linear(fcall);
++}
++int 
++sys_ls_call17(void)
++{
++  char* fcall;
++  if (argptr(0, (char **) &fcall, (sizeof(char)*10)) < 0)
++  return -1;
++ 
++  return linear(fcall);
++}
++int 
++sys_ls_call18(void)
++{
++  char* fcall;
++  if (argptr(0, (char **) &fcall, (sizeof(char)*10)) < 0)
++  return -1;
++
++  return linear(fcall);
++}
++int 
++sys_ls_call19(void)
++{
++  char* fcall;
++  if (argptr(0, (char **) &fcall, (sizeof(char)*10)) < 0)
++  return -1;
++
++  return linear(fcall);
++}
++int 
++sys_ls_call20(void)
++{
++  char* fcall;
++  if (argptr(0, (char **) &fcall, (sizeof(char)*10)) < 0)
++  return -1;
++ 
++  return linear(fcall);
++}
++int 
++sys_ls_call21(void)
++{
++  char* fcall;
++  if (argptr(0, (char **) &fcall, (sizeof(char)*10)) < 0)
++  return -1;
++ 
++  return linear(fcall);
++}
++int 
++sys_ls_call22(void)
++{
++  char* fcall;
++  if (argptr(0, (char **) &fcall, (sizeof(char)*10)) < 0)
++  return -1;
++ 
++  return linear(fcall);
++}
++int 
++sys_ls_call23(void)
++{
++  char* fcall;
++  if (argptr(0, (char **) &fcall, (sizeof(char)*10)) < 0)
++  return -1;
++ 
++  return linear(fcall);
++}
++int 
++sys_ls_call24(void)
++{
++  char* fcall;
++  if (argptr(0, (char **) &fcall, (sizeof(char)*10)) < 0)
++  return -1;
++ 
++  return linear(fcall);
++}
++int 
++sys_ls_call25(void)
++{
++  char* fcall;
++  if (argptr(0, (char **) &fcall, (sizeof(char)*10)) < 0)
++  return -1;
++ 
++  return linear(fcall);
++}
++int 
++sys_ls_call26(void)
++{
++  char* fcall;
++  if (argptr(0, (char **) &fcall, (sizeof(char)*10)) < 0)
++  return -1;
++ 
++  return linear(fcall);
++}
++int 
++sys_ls_call27(void)
++{
++  char* fcall;
++  if (argptr(0, (char **) &fcall, (sizeof(char)*10)) < 0)
++  return -1;
++ 
++  return linear(fcall);
++}
++int 
++sys_ls_call28(void)
++{
++  char* fcall;
++  if (argptr(0, (char **) &fcall, (sizeof(char)*10)) < 0)
++  return -1;
++ 
++  return linear(fcall);
++}
++int 
++sys_ls_call29(void)
++{
++  char* fcall;
++  if (argptr(0, (char **) &fcall, (sizeof(char)*10)) < 0)
++  return -1;
++ 
++  return linear(fcall);
++}
++int 
++sys_ls_call30(void)
++{
++  char* fcall;
++  if (argptr(0, (char **) &fcall, (sizeof(char)*10)) < 0)
++  return -1;
++ 
++  return linear(fcall);
++}
++int 
++sys_ls_call31(void)
++{
++  char* fcall;
++  if (argptr(0, (char **) &fcall, (sizeof(char)*10)) < 0)
++  return -1;
++ 
++  return linear(fcall);
++}
++int 
++sys_ls_call32(void)
++{
++  char* fcall;
++  if (argptr(0, (char **) &fcall, (sizeof(char)*10)) < 0)
++  return -1;
++
++  return linear(fcall);
++}
++int 
++sys_ls_call33(void)
++{
++  char* fcall;
++  if (argptr(0, (char **) &fcall, (sizeof(char)*10)) < 0)
++  return -1;
++ 
++  return linear(fcall);
++}
++int 
++sys_ls_call34(void)
++{
++  char* fcall;
++  if (argptr(0, (char **) &fcall, (sizeof(char)*10)) < 0)
++  return -1;
++ 
++  return linear(fcall);
++}
++int 
++sys_ls_call35(void)
++{
++  char* fcall;
++  if (argptr(0, (char **) &fcall, (sizeof(char)*10)) < 0)
++  return -1;
++ 
++  return linear(fcall);
++}
++int 
++sys_ls_call36(void)
++{
++  char* fcall;
++  if (argptr(0, (char **) &fcall, (sizeof(char)*10)) < 0)
++  return -1;
++ 
++  return linear(fcall);
++}
++int 
++sys_ls_call37(void)
++{
++  char* fcall;
++  if (argptr(0, (char **) &fcall, (sizeof(char)*10)) < 0)
++  return -1;
++ 
++  return linear(fcall);
++}
++int 
++sys_ls_call38(void)
++{
++  char* fcall;
++  if (argptr(0, (char **) &fcall, (sizeof(char)*10)) < 0)
++  return -1;
++ 
++  return linear(fcall);
++}
++int 
++sys_ls_call39(void)
++{
++  char* fcall;
++  if (argptr(0, (char **) &fcall, (sizeof(char)*10)) < 0)
++  return -1;
++ 
++  return linear(fcall);
++}
++int 
++sys_ls_call40(void)
++{
++  char* fcall;
++  if (argptr(0, (char **) &fcall, (sizeof(char)*10)) < 0)
++  return -1;
++ 
++  return linear(fcall);
++}
++int 
++sys_ls_call41(void)
++{
++  char* fcall;
++  if (argptr(0, (char **) &fcall, (sizeof(char)*10)) < 0)
++  return -1;
++ 
++  return linear(fcall);
++}
++int 
++sys_ls_call42(void)
++{
++  char* fcall;
++  if (argptr(0, (char **) &fcall, (sizeof(char)*10)) < 0)
++  return -1;
++ 
++  return linear(fcall);
++}
++int 
++sys_ls_call43(void)
++{
++  char* fcall;
++  if (argptr(0, (char **) &fcall, (sizeof(char)*10)) < 0)
++  return -1;
++ 
++  return linear(fcall);
++}
++int 
++sys_ls_call44(void)
++{
++  char* fcall;
++  if (argptr(0, (char **) &fcall, (sizeof(char)*10)) < 0)
++  return -1;
++ 
++  return linear(fcall);
++}
++int 
++sys_ls_call45(void)
++{
++  char* fcall;
++  if (argptr(0, (char **) &fcall, (sizeof(char)*10)) < 0)
++  return -1;
++ 
++  return linear(fcall);
++}
++int 
++sys_ls_call46(void)
++{
++  char* fcall;
++  if (argptr(0, (char **) &fcall, (sizeof(char)*10)) < 0)
++  return -1;
++  linear(fcall);
++  return linear(fcall);
++}
++int 
++sys_ls_call47(void)
++{
++  char* fcall;
++  if (argptr(0, (char **) &fcall, (sizeof(char)*10)) < 0)
++  return -1;
++ 
++  return linear(fcall);
++}
++int 
++sys_ls_call48(void)
++{
++  char* fcall;
++  if (argptr(0, (char **) &fcall, (sizeof(char)*10)) < 0)
++  return -1;
++ 
++  return linear(fcall);
++}
++int 
++sys_ls_call49(void)
++{
++  char* fcall;
++  if (argptr(0, (char **) &fcall, (sizeof(char)*10)) < 0)
++  return -1;
++ 
++  return linear(fcall);
++}
++int 
++sys_ls_call50(void)
++{
++  char* fcall;
++  if (argptr(0, (char **) &fcall, (sizeof(char)*10)) < 0)
++  return -1;
++
++  return linear(fcall);
++}
++
++
++int 
++sys_ht_call01(void)
++{
++  char* fcall;
++  if (argptr(0, (char **) &fcall, (sizeof(char)*10)) < 0)
++  return -1;
++
++  return hash(fcall);
++}
++int 
++sys_ht_call02(void)
++{
++  char* fcall;
++  if (argptr(0, (char **) &fcall, (sizeof(char)*10)) < 0)
++  return -1;
++  int i= hash(fcall);
++  return i;
++}
++int 
++sys_ht_call03(void)
++{
++  char* fcall;
++  if (argptr(0, (char **) &fcall, (sizeof(char)*10)) < 0)
++  return -1;
++ 
++  return hash(fcall);
++}
++int 
++sys_ht_call04(void)
++{
++  char* fcall;
++  if (argptr(0, (char **) &fcall, (sizeof(char)*10)) < 0)
++  return -1;
++
++  return hash(fcall);
++}
++int 
++sys_ht_call05(void)
++{
++  char* fcall;
++  if (argptr(0, (char **) &fcall, (sizeof(char)*10)) < 0)
++  return -1;
++ 
++  return hash(fcall);
++}
++int 
++sys_ht_call06(void)
++{
++  char* fcall;
++  if (argptr(0, (char **) &fcall, (sizeof(char)*10)) < 0)
++  return -1;
++  
++  return hash(fcall);
++}
++int 
++sys_ht_call07(void)
++{
++  char* fcall;
++  if (argptr(0, (char **) &fcall, (sizeof(char)*10)) < 0)
++  return -1;
++
++  return hash(fcall);
++}
++int 
++sys_ht_call08(void)
++{
++  char* fcall;
++  if (argptr(0, (char **) &fcall, (sizeof(char)*10)) < 0)
++  return -1;
++ 
++  return hash(fcall);
++}
++int 
++sys_ht_call09(void)
++{
++  char* fcall;
++  if (argptr(0, (char **) &fcall, (sizeof(char)*10)) < 0)
++  return -1;
++ 
++  return hash(fcall);
++}
++int 
++sys_ht_call10(void)
++{
++  char* fcall;
++  if (argptr(0, (char **) &fcall, (sizeof(char)*10)) < 0)
++  return -1;
++ 
++  return hash(fcall);
++}
++int 
++sys_ht_call11(void)
++{
++  char* fcall;
++  if (argptr(0, (char **) &fcall, (sizeof(char)*10)) < 0)
++  return -1;
++ 
++  return hash(fcall);
++}
++int 
++sys_ht_call12(void)
++{
++  char* fcall;
++  if (argptr(0, (char **) &fcall, (sizeof(char)*10)) < 0)
++  return -1;
++ 
++  return hash(fcall);
++}
++int 
++sys_ht_call13(void)
++{
++  char* fcall;
++  if (argptr(0, (char **) &fcall, (sizeof(char)*10)) < 0)
++  return -1;
++ 
++  return hash(fcall);
++}
++int 
++sys_ht_call14(void)
++{
++  char* fcall;
++  if (argptr(0, (char **) &fcall, (sizeof(char)*10)) < 0)
++  return -1;
++ 
++  return hash(fcall);
++}
++int 
++sys_ht_call15(void)
++{
++  char* fcall;
++  if (argptr(0, (char **) &fcall, (sizeof(char)*10)) < 0)
++  return -1;
++ 
++  return hash(fcall);
++}
++int 
++sys_ht_call16(void)
++{
++  char* fcall;
++  if (argptr(0, (char **) &fcall, (sizeof(char)*10)) < 0)
++  return -1;
++ 
++  return hash(fcall);
++}
++int 
++sys_ht_call17(void)
++{
++  char* fcall;
++  if (argptr(0, (char **) &fcall, (sizeof(char)*10)) < 0)
++  return -1;
++ 
++  return hash(fcall);
++}
++int 
++sys_ht_call18(void)
++{
++  char* fcall;
++  if (argptr(0, (char **) &fcall, (sizeof(char)*10)) < 0)
++  return -1;
++
++  return hash(fcall);
++}
++int 
++sys_ht_call19(void)
++{
++  char* fcall;
++  if (argptr(0, (char **) &fcall, (sizeof(char)*10)) < 0)
++  return -1;
++
++  return hash(fcall);
++}
++int 
++sys_ht_call20(void)
++{
++  char* fcall;
++  if (argptr(0, (char **) &fcall, (sizeof(char)*10)) < 0)
++  return -1;
++ 
++  return hash(fcall);
++}
++int 
++sys_ht_call21(void)
++{
++  char* fcall;
++  if (argptr(0, (char **) &fcall, (sizeof(char)*10)) < 0)
++  return -1;
++ 
++  return hash(fcall);
++}
++int 
++sys_ht_call22(void)
++{
++  char* fcall;
++  if (argptr(0, (char **) &fcall, (sizeof(char)*10)) < 0)
++  return -1;
++ 
++  return hash(fcall);
++}
++int 
++sys_ht_call23(void)
++{
++  char* fcall;
++  if (argptr(0, (char **) &fcall, (sizeof(char)*10)) < 0)
++  return -1;
++ 
++  return hash(fcall);
++}
++int 
++sys_ht_call24(void)
++{
++  char* fcall;
++  if (argptr(0, (char **) &fcall, (sizeof(char)*10)) < 0)
++  return -1;
++ 
++  return hash(fcall);
++}
++int 
++sys_ht_call25(void)
++{
++  char* fcall;
++  if (argptr(0, (char **) &fcall, (sizeof(char)*10)) < 0)
++  return -1;
++ 
++  return hash(fcall);
++}
++int 
++sys_ht_call26(void)
++{
++  char* fcall;
++  if (argptr(0, (char **) &fcall, (sizeof(char)*10)) < 0)
++  return -1;
++ 
++  return hash(fcall);
++}
++int 
++sys_ht_call27(void)
++{
++  char* fcall;
++  if (argptr(0, (char **) &fcall, (sizeof(char)*10)) < 0)
++  return -1;
++ 
++  return hash(fcall);
++}
++int 
++sys_ht_call28(void)
++{
++  char* fcall;
++  if (argptr(0, (char **) &fcall, (sizeof(char)*10)) < 0)
++  return -1;
++ 
++  return hash(fcall);
++}
++int 
++sys_ht_call29(void)
++{
++  char* fcall;
++  if (argptr(0, (char **) &fcall, (sizeof(char)*10)) < 0)
++  return -1;
++ 
++  return hash(fcall);
++}
++int 
++sys_ht_call30(void)
++{
++  char* fcall;
++  if (argptr(0, (char **) &fcall, (sizeof(char)*10)) < 0)
++  return -1;
++ 
++  return hash(fcall);
++}
++int 
++sys_ht_call31(void)
++{
++  char* fcall;
++  if (argptr(0, (char **) &fcall, (sizeof(char)*10)) < 0)
++  return -1;
++ 
++  return hash(fcall);
++}
++int 
++sys_ht_call32(void)
++{
++  char* fcall;
++  if (argptr(0, (char **) &fcall, (sizeof(char)*10)) < 0)
++  return -1;
++
++  return hash(fcall);
++}
++int 
++sys_ht_call33(void)
++{
++  char* fcall;
++  if (argptr(0, (char **) &fcall, (sizeof(char)*10)) < 0)
++  return -1;
++ 
++  return hash(fcall);
++}
++int 
++sys_ht_call34(void)
++{
++  char* fcall;
++  if (argptr(0, (char **) &fcall, (sizeof(char)*10)) < 0)
++  return -1;
++ 
++  return hash(fcall);
++}
++int 
++sys_ht_call35(void)
++{
++  char* fcall;
++  if (argptr(0, (char **) &fcall, (sizeof(char)*10)) < 0)
++  return -1;
++ 
++  return hash(fcall);
++}
++int 
++sys_ht_call36(void)
++{
++  char* fcall;
++  if (argptr(0, (char **) &fcall, (sizeof(char)*10)) < 0)
++  return -1;
++ 
++  return hash(fcall);
++}
++int 
++sys_ht_call37(void)
++{
++  char* fcall;
++  if (argptr(0, (char **) &fcall, (sizeof(char)*10)) < 0)
++  return -1;
++ 
++  return hash(fcall);
++}
++int 
++sys_ht_call38(void)
++{
++  char* fcall;
++  if (argptr(0, (char **) &fcall, (sizeof(char)*10)) < 0)
++  return -1;
++ 
++  return hash(fcall);
++}
++int 
++sys_ht_call39(void)
++{
++  char* fcall;
++  if (argptr(0, (char **) &fcall, (sizeof(char)*10)) < 0)
++  return -1;
++ 
++  return hash(fcall);
++}
++int 
++sys_ht_call40(void)
++{
++  char* fcall;
++  if (argptr(0, (char **) &fcall, (sizeof(char)*10)) < 0)
++  return -1;
++ 
++  return hash(fcall);
++}
++int 
++sys_ht_call41(void)
++{
++  char* fcall;
++  if (argptr(0, (char **) &fcall, (sizeof(char)*10)) < 0)
++  return -1;
++ 
++  return hash(fcall);
++}
++int 
++sys_ht_call42(void)
++{
++  char* fcall;
++  if (argptr(0, (char **) &fcall, (sizeof(char)*10)) < 0)
++  return -1;
++ 
++  return hash(fcall);
++}
++int 
++sys_ht_call43(void)
++{
++  char* fcall;
++  if (argptr(0, (char **) &fcall, (sizeof(char)*10)) < 0)
++  return -1;
++ 
++  return hash(fcall);
++}
++int 
++sys_ht_call44(void)
++{
++  char* fcall;
++  if (argptr(0, (char **) &fcall, (sizeof(char)*10)) < 0)
++  return -1;
++ 
++  return hash(fcall);
++}
++int 
++sys_ht_call45(void)
++{
++  char* fcall;
++  if (argptr(0, (char **) &fcall, (sizeof(char)*10)) < 0)
++  return -1;
++ 
++  return hash(fcall);
++}
++int 
++sys_ht_call46(void)
++{
++  char* fcall;
++  if (argptr(0, (char **) &fcall, (sizeof(char)*10)) < 0)
++  return -1;
++  hash(fcall);
++  return hash(fcall);
++}
++int 
++sys_ht_call47(void)
++{
++  char* fcall;
++  if (argptr(0, (char **) &fcall, (sizeof(char)*10)) < 0)
++  return -1;
++ 
++  return hash(fcall);
++}
++int 
++sys_ht_call48(void)
++{
++  char* fcall;
++  if (argptr(0, (char **) &fcall, (sizeof(char)*10)) < 0)
++  return -1;
++ 
++  return hash(fcall);
++}
++int 
++sys_ht_call49(void)
++{
++  char* fcall;
++  if (argptr(0, (char **) &fcall, (sizeof(char)*10)) < 0)
++  return -1;
++ 
++  return hash(fcall);
++}
++int 
++sys_ht_call50(void)
++{
++  char* fcall;
++  if (argptr(0, (char **) &fcall, (sizeof(char)*10)) < 0)
++  return -1;
++
++  return hash(fcall);
++}
++
++
++
++//syscall.h part
++
++extern int sys_ls_call01(void);
++extern int sys_ls_call02(void);
++extern int sys_ls_call03(void);
++extern int sys_ls_call04(void);
++extern int sys_ls_call05(void);
++extern int sys_ls_call06(void);
++extern int sys_ls_call07(void);
++extern int sys_ls_call08(void);
++extern int sys_ls_call09(void);
++extern int sys_ls_call10(void);
++extern int sys_ls_call11(void);
++extern int sys_ls_call12(void);
++extern int sys_ls_call13(void);
++extern int sys_ls_call14(void);
++extern int sys_ls_call15(void);
++extern int sys_ls_call16(void);
++extern int sys_ls_call17(void);
++extern int sys_ls_call18(void);
++extern int sys_ls_call19(void);
++extern int sys_ls_call20(void);
++extern int sys_ls_call21(void);
++extern int sys_ls_call22(void);
++extern int sys_ls_call23(void);
++extern int sys_ls_call24(void);
++extern int sys_ls_call25(void);
++extern int sys_ls_call26(void);
++extern int sys_ls_call27(void);
++extern int sys_ls_call28(void);
++extern int sys_ls_call29(void);
++extern int sys_ls_call30(void);
++extern int sys_ls_call31(void);
++extern int sys_ls_call32(void);
++extern int sys_ls_call33(void);
++extern int sys_ls_call34(void);
++extern int sys_ls_call35(void);
++extern int sys_ls_call36(void);
++extern int sys_ls_call37(void);
++extern int sys_ls_call38(void);
++extern int sys_ls_call39(void);
++extern int sys_ls_call40(void);
++extern int sys_ls_call41(void);
++extern int sys_ls_call42(void);
++extern int sys_ls_call43(void);
++extern int sys_ls_call44(void);
++extern int sys_ls_call45(void);
++extern int sys_ls_call46(void);
++extern int sys_ls_call47(void);
++extern int sys_ls_call48(void);
++extern int sys_ls_call49(void);
++extern int sys_ls_call50(void);
++
++extern int sys_ht_call01(void);
++extern int sys_ht_call02(void);
++extern int sys_ht_call03(void);
++extern int sys_ht_call04(void);
++extern int sys_ht_call05(void);
++extern int sys_ht_call06(void);
++extern int sys_ht_call07(void);
++extern int sys_ht_call08(void);
++extern int sys_ht_call09(void);
++extern int sys_ht_call10(void);
++extern int sys_ht_call11(void);
++extern int sys_ht_call12(void);
++extern int sys_ht_call13(void);
++extern int sys_ht_call14(void);
++extern int sys_ht_call15(void);
++extern int sys_ht_call16(void);
++extern int sys_ht_call17(void);
++extern int sys_ht_call18(void);
++extern int sys_ht_call19(void);
++extern int sys_ht_call20(void);
++extern int sys_ht_call21(void);
++extern int sys_ht_call22(void);
++extern int sys_ht_call23(void);
++extern int sys_ht_call24(void);
++extern int sys_ht_call25(void);
++extern int sys_ht_call26(void);
++extern int sys_ht_call27(void);
++extern int sys_ht_call28(void);
++extern int sys_ht_call29(void);
++extern int sys_ht_call30(void);
++extern int sys_ht_call31(void);
++extern int sys_ht_call32(void);
++extern int sys_ht_call33(void);
++extern int sys_ht_call34(void);
++extern int sys_ht_call35(void);
++extern int sys_ht_call36(void);
++extern int sys_ht_call37(void);
++extern int sys_ht_call38(void);
++extern int sys_ht_call39(void);
++extern int sys_ht_call40(void);
++extern int sys_ht_call41(void);
++extern int sys_ht_call42(void);
++extern int sys_ht_call43(void);
++extern int sys_ht_call44(void);
++extern int sys_ht_call45(void);
++extern int sys_ht_call46(void);
++extern int sys_ht_call47(void);
++extern int sys_ht_call48(void);
++extern int sys_ht_call49(void);
++extern int sys_ht_call50(void);
++
++static int (*cs550_syscalls[])(void) = {
++[LS_ls_call01] sys_ls_call01,
++[LS_ls_call02] sys_ls_call02,
++[LS_ls_call03] sys_ls_call03,
++[LS_ls_call04] sys_ls_call04,
++[LS_ls_call05] sys_ls_call05,
++[LS_ls_call06] sys_ls_call06,
++[LS_ls_call07] sys_ls_call07,
++[LS_ls_call08] sys_ls_call08,
++[LS_ls_call09] sys_ls_call09,
++[LS_ls_call10] sys_ls_call10,
++[LS_ls_call11] sys_ls_call11,
++[LS_ls_call12] sys_ls_call12,
++[LS_ls_call13] sys_ls_call13,
++[LS_ls_call14] sys_ls_call14,
++[LS_ls_call15] sys_ls_call15,
++[LS_ls_call16] sys_ls_call16,
++[LS_ls_call17] sys_ls_call17,
++[LS_ls_call18] sys_ls_call18,
++[LS_ls_call19] sys_ls_call19,
++[LS_ls_call20] sys_ls_call20,
++[LS_ls_call21] sys_ls_call21,
++[LS_ls_call22] sys_ls_call22,
++[LS_ls_call23] sys_ls_call23,
++[LS_ls_call24] sys_ls_call24,
++[LS_ls_call25] sys_ls_call25,
++[LS_ls_call26] sys_ls_call26,
++[LS_ls_call27] sys_ls_call27,
++[LS_ls_call28] sys_ls_call28,
++[LS_ls_call29] sys_ls_call29,
++[LS_ls_call30] sys_ls_call30,
++[LS_ls_call31] sys_ls_call31,
++[LS_ls_call32] sys_ls_call32,
++[LS_ls_call33] sys_ls_call33,
++[LS_ls_call34] sys_ls_call34,
++[LS_ls_call35] sys_ls_call35,
++[LS_ls_call36] sys_ls_call36,
++[LS_ls_call37] sys_ls_call37,
++[LS_ls_call38] sys_ls_call38,
++[LS_ls_call39] sys_ls_call39,
++[LS_ls_call40] sys_ls_call40,
++[LS_ls_call41] sys_ls_call41,
++[LS_ls_call42] sys_ls_call42,
++[LS_ls_call43] sys_ls_call43,
++[LS_ls_call44] sys_ls_call44,
++[LS_ls_call45] sys_ls_call45,
++[LS_ls_call46] sys_ls_call46,
++[LS_ls_call47] sys_ls_call47,
++[LS_ls_call48] sys_ls_call48,
++[LS_ls_call49] sys_ls_call49,
++[LS_ls_call50] sys_ls_call50,
++[HT_ht_call01] sys_ht_call01,
++[HT_ht_call02] sys_ht_call02,
++[HT_ht_call03] sys_ht_call03,
++[HT_ht_call04] sys_ht_call04,
++[HT_ht_call05] sys_ht_call05,
++[HT_ht_call06] sys_ht_call06,
++[HT_ht_call07] sys_ht_call07,
++[HT_ht_call08] sys_ht_call08,
++[HT_ht_call09] sys_ht_call09,
++[HT_ht_call10] sys_ht_call10,
++[HT_ht_call11] sys_ht_call11,
++[HT_ht_call12] sys_ht_call12,
++[HT_ht_call13] sys_ht_call13,
++[HT_ht_call14] sys_ht_call14,
++[HT_ht_call15] sys_ht_call15,
++[HT_ht_call16] sys_ht_call16,
++[HT_ht_call17] sys_ht_call17,
++[HT_ht_call18] sys_ht_call18,
++[HT_ht_call19] sys_ht_call19,
++[HT_ht_call20] sys_ht_call20,
++[HT_ht_call21] sys_ht_call21,
++[HT_ht_call22] sys_ht_call22,
++[HT_ht_call23] sys_ht_call23,
++[HT_ht_call24] sys_ht_call24,
++[HT_ht_call25] sys_ht_call25,
++[HT_ht_call26] sys_ht_call26,
++[HT_ht_call27] sys_ht_call27,
++[HT_ht_call28] sys_ht_call28,
++[HT_ht_call29] sys_ht_call29,
++[HT_ht_call30] sys_ht_call30,
++[HT_ht_call31] sys_ht_call31,
++[HT_ht_call32] sys_ht_call32,
++[HT_ht_call33] sys_ht_call33,
++[HT_ht_call34] sys_ht_call34,
++[HT_ht_call35] sys_ht_call35,
++[HT_ht_call36] sys_ht_call36,
++[HT_ht_call37] sys_ht_call37,
++[HT_ht_call38] sys_ht_call38,
++[HT_ht_call39] sys_ht_call39,
++[HT_ht_call40] sys_ht_call40,
++[HT_ht_call41] sys_ht_call41,
++[HT_ht_call42] sys_ht_call42,
++[HT_ht_call43] sys_ht_call43,
++[HT_ht_call44] sys_ht_call44,
++[HT_ht_call45] sys_ht_call45,
++[HT_ht_call46] sys_ht_call46,
++[HT_ht_call47] sys_ht_call47,
++[HT_ht_call48] sys_ht_call48,
++[HT_ht_call49] sys_ht_call49,
++[HT_ht_call50] sys_ht_call50,
++};
++
++//syscall.c part
++void
++cs550_syscall(void)
++{
++  int num;
++
++  num = proc->tf->eax;
++   
++  if(num > 0 && num < NELEM(cs550_syscalls) && cs550_syscalls[num]) {
++    proc->tf->eax = cs550_syscalls[num]();
++  } else {
++    cprintf("%d %s: unknown sys call %d\n",
++            proc->pid, proc->name, num);
++    proc->tf->eax = -1;
++  }
++}
+diff -Nur xv6-cs550-2016,1s-p1-baseline/cs550_syscall.c~ xv6-cs550-2016,1s-p2-working/cs550_syscall.c~
+--- xv6-cs550-2016,1s-p1-baseline/cs550_syscall.c~	1969-12-31 19:00:00.000000000 -0500
++++ xv6-cs550-2016,1s-p2-working/cs550_syscall.c~	2016-03-11 18:28:56.439830000 -0500
+@@ -0,0 +1,1754 @@
++#include "defs.h"
++#include "syscall.h"
++//proc part
++int ls_ls_call00(void)
++{
++  return 0;
++}
++
++int ls_ls_call01(void)
++{
++  return 1;
++}
++int ls_ls_call02(void)
++{
++  return 1;
++}
++int ls_ls_call03()
++{
++  return 3;
++}
++int ls_ls_call04()
++{
++  return 4;
++}
++int ls_ls_call05()
++{
++  return 5;
++}
++int ls_ls_call06()
++{
++  return 6;
++}
++int ls_ls_call07()
++{
++  return 7;
++}
++int ls_ls_call08()
++{
++  return 8;
++}
++int ls_ls_call09()
++{
++  return 9;
++}
++int ls_ls_call10()
++{
++  return 10;
++}
++int ls_ls_call11()
++{
++  return 11;
++}
++int ls_ls_call12()
++{
++  return 12;
++}
++int ls_ls_call13()
++{
++	  return 13;
++}
++int ls_ls_call14()
++{
++  return 14;
++}
++int ls_ls_call15()
++{
++  return 15;
++}
++int ls_ls_call16()
++{
++  return 16;
++}
++int ls_ls_call17()
++{
++  return 17;
++}
++int ls_ls_call18()
++{
++  return 18;
++}
++int ls_ls_call19()
++{
++  return 19;
++}
++int ls_ls_call20()
++{
++  return 20;
++}
++
++int ls_ls_call21()
++{
++  return 21;
++}
++int ls_ls_call22()
++{
++  return 22;
++}
++int ls_ls_call23()
++{
++  return 23;
++}
++int ls_ls_call24()
++{
++  return 24;
++}
++int ls_ls_call25()
++{
++  return 25;
++}
++int ls_ls_call26()
++{
++  return 26;
++}
++int ls_ls_call27()
++{
++  return 27;
++}
++int ls_ls_call28()
++{
++  return 28;
++}
++int ls_ls_call29()
++{
++  return 29;
++}
++int ls_ls_call30()
++{
++  return 30;
++}
++int ls_ls_call31()
++{
++  return 31;
++}
++int ls_ls_call32()
++{
++  return 32;
++}
++int ls_ls_call33()
++{
++  return 33;
++}
++int ls_ls_call34()
++{
++  return 34;
++}
++int ls_ls_call35()
++{
++  return 35;
++}
++int ls_ls_call36()
++{
++  return 36;
++}
++int ls_ls_call37()
++{
++  return 37;
++}
++int ls_ls_call38()
++{
++  return 38;
++}
++int ls_ls_call39()
++{
++  return 39;
++}
++int ls_ls_call40()
++{
++  return 40;
++}
++int ls_ls_call41()
++{
++  return 41;
++}
++int ls_ls_call42()
++{
++  return 42;
++}
++int ls_ls_call43()
++{
++  return 43;
++}
++int ls_ls_call44()
++{
++  return 44;
++}
++int ls_ls_call45()
++{
++  return 45;
++}
++int ls_ls_call46()
++{
++  return 46;
++}
++int ls_ls_call47()
++{
++  return 47;
++}
++int ls_ls_call48()
++{
++  return 48;
++}
++int ls_ls_call49()
++{
++  return 49;
++}
++int ls_ls_call50()
++{
++  return 50;
++}
++
++int ht_ht_call00()
++{
++ return 0;
++}
++
++int ht_ht_call01()
++{
++ return 01;
++}
++int ht_ht_call02()
++{
++  return 2;
++}
++int ht_ht_call03()
++{
++  return 3;
++}
++int ht_ht_call04()
++{
++  return 4;
++}
++int ht_ht_call05()
++{
++  return 5;
++}
++int ht_ht_call06()
++{
++  return 6;
++}
++int ht_ht_call07()
++{
++  return 7;
++}
++int ht_ht_call08()
++{
++  return 8;
++}
++int ht_ht_call09()
++{
++  return 9;
++}
++int ht_ht_call10()
++{
++  return 10;
++}
++int ht_ht_call11()
++{
++  return 11;
++}
++int ht_ht_call12()
++{
++  return 12;
++}
++int ht_ht_call13()
++{
++  return 13;
++}
++int ht_ht_call14()
++{
++  return 14;
++}
++int ht_ht_call15()
++{
++  return 15;
++}
++int ht_ht_call16()
++{
++  return 16;
++}
++int ht_ht_call17()
++{
++  return 17;
++}
++int ht_ht_call18()
++{
++  return 18;
++}
++int ht_ht_call19()
++{
++  return 19;
++}
++int ht_ht_call20()
++{
++  return 20;
++}
++
++int ht_ht_call21()
++{
++  return 21;
++}
++int ht_ht_call22()
++{
++  return 22;
++}
++int ht_ht_call23()
++{
++  return 23;
++}
++int ht_ht_call24()
++{
++  return 24;
++}
++int ht_ht_call25()
++{
++  return 25;
++}
++int ht_ht_call26()
++{
++  return 26;
++}
++int ht_ht_call27()
++{
++  return 27;
++}
++int ht_ht_call28()
++{
++  return 28;
++}
++int ht_ht_call29()
++{
++  return 29;
++}
++int ht_ht_call30()
++{
++  return 30;
++}
++int ht_ht_call31()
++{
++  return 31;
++}
++int ht_ht_call32()
++{
++  return 32;
++}
++int ht_ht_call33()
++{
++  return 33;
++}
++int ht_ht_call34()
++{
++  return 34;
++}
++int ht_ht_call35()
++{
++  return 35;
++}
++int ht_ht_call36()
++{
++  return 36;
++}
++int ht_ht_call37()
++{
++  return 37;
++}
++int ht_ht_call38()
++{
++  return 38;
++}
++int ht_ht_call39()
++{
++  return 39;
++}
++int ht_ht_call40()
++{
++  return 40;
++}
++int ht_ht_call41()
++{
++  return 41;
++}
++int ht_ht_call42()
++{
++  return 42;
++}
++int ht_ht_call43()
++{
++  return 43;
++}
++int ht_ht_call44()
++{
++  return 44;
++}
++int ht_ht_call45()
++{
++  return 45;
++}
++int ht_ht_call46()
++{
++  return 46;
++}
++int ht_ht_call47()
++{
++  return 47;
++}
++int ht_ht_call48()
++{
++  return 48;
++}
++int ht_ht_call49()
++{
++  return 49;
++}
++int ht_ht_call50()
++{
++  return 50;
++}
++
++static int (*lscalls[])(void) = {
++ls_ls_call00,
++ls_ls_call01,
++ls_ls_call02,
++ls_ls_call03,
++ls_ls_call04,
++ls_ls_call05,
++ls_ls_call06,
++ls_ls_call07,
++ls_ls_call08,
++ls_ls_call09,
++ls_ls_call10,
++ls_ls_call11,
++ls_ls_call12,
++ls_ls_call13,
++ls_ls_call14,
++ls_ls_call15,
++ls_ls_call16,
++ls_ls_call17,
++ls_ls_call18,
++ls_ls_call19,
++ls_ls_call20,
++ls_ls_call21,
++ls_ls_call22,
++ls_ls_call23,
++ls_ls_call24,
++ls_ls_call25,
++ls_ls_call26,
++ls_ls_call27,
++ls_ls_call28,
++ls_ls_call29,
++ls_ls_call30,
++ls_ls_call31,
++ls_ls_call32,
++ls_ls_call33,
++ls_ls_call34,
++ls_ls_call35,
++ls_ls_call36,
++ls_ls_call37,
++ls_ls_call38,
++ls_ls_call39,
++ls_ls_call40,
++ls_ls_call41,
++ls_ls_call42,
++ls_ls_call43,
++ls_ls_call44,
++ls_ls_call45,
++ls_ls_call46,
++ls_ls_call47,
++ls_ls_call48,
++ls_ls_call49,
++ls_ls_call50,
++};
++
++static int (*htcalls[])(void)=
++{
++ht_ht_call00,
++ht_ht_call01,
++ht_ht_call02,
++ht_ht_call03,
++ht_ht_call04,
++ht_ht_call05,
++ht_ht_call06,
++ht_ht_call07,
++ht_ht_call08,
++ht_ht_call09,
++ht_ht_call10,
++ht_ht_call11,
++ht_ht_call12,
++ht_ht_call13,
++ht_ht_call14,
++ht_ht_call15,
++ht_ht_call16,
++ht_ht_call17,
++ht_ht_call18,
++ht_ht_call19,
++ht_ht_call20,
++ht_ht_call21,
++ht_ht_call22,
++ht_ht_call23,
++ht_ht_call24,
++ht_ht_call25,
++ht_ht_call26,
++ht_ht_call27,
++ht_ht_call28,
++ht_ht_call29,
++ht_ht_call30,
++ht_ht_call31,
++ht_ht_call32,
++ht_ht_call33,
++ht_ht_call34,
++ht_ht_call35,
++ht_ht_call36,
++ht_ht_call37,
++ht_ht_call38,
++ht_ht_call39,
++ht_ht_call40,
++ht_ht_call41,
++ht_ht_call42,
++ht_ht_call43,
++ht_ht_call44,
++ht_ht_call45,
++ht_ht_call46,
++ht_ht_call47,
++ht_ht_call48,
++ht_ht_call49,
++ht_ht_call50,
++};
++
++int
++atoi(char *s)
++{
++  int n;
++
++  n = 0;
++  while('0' <= *s && *s <= '9')
++    n = n*10 + *s++ - '0';
++  return n;
++}
++
++int linear(char* fcall)
++{
++  int id,i,val,lv1,lv2;
++  char temp[2];
++  int fparray[50];
++  for(i=0;i<50;i++)
++  {
++	fparray[i]=i+1;
++  }
++	if(fcall[0]=='l'&&fcall[1]=='s'&&fcall[2]=='_'&&fcall[3]=='c'&&fcall[4]=='a'&&fcall[5]=='l'&&fcall[6]=='l'&&fcall[9]=='\0')
++	{
++	  temp[0]=fcall[7];
++	  temp[1]='\0';
++	  lv1=atoi(temp);
++	  temp[0]=fcall[8];
++	  temp[1]='\0';
++	  lv2=atoi(temp);
++	  if(lv1>=0&&lv1<5&&lv2>=0&&lv2<=9)
++	  {
++		id=lv1*10;
++		id=id+lv2;
++	  }
++	  else if(lv1==5 && lv2==0)
++	  {
++		id=lv1*10;
++	  }
++	
++	  if(id > 0 && id < NELEM(lscalls) && lscalls[id]) 
++	  {
++			for(i=0;i<50;i++)
++			{
++			   if(fparray[i]==id)
++			   {
++			    val = lscalls[id]();
++			    return val;		 
++			   }
++			}
++		        
++	  }
++	} 
++		cprintf("\nWrong system call please check the parameter passed!\n");
++        	return -1;
++}
++int hashing(int n)
++{ 
++ return n/10;
++}
++int hash(char* fcall)
++{	
++	int id = 0, i, j, val, lv1, lv2, key;
++	char temp[2];
++	int fparray[10][50];
++	for (i = 0; i<=50; i++)
++	{
++		j = i/10;
++		fparray[j][i%10] = i;
++	}
++	if (fcall[0] == 'h'&&fcall[1] == 't'&&fcall[2] == '_'&&fcall[3] == 'c'&&fcall[4] == 'a'&&fcall[5] == 'l'&&fcall[6] == 'l'&&fcall[9] == '\0')
++	{
++		temp[0] = fcall[7];
++		temp[1] = '\0';
++		lv1 = atoi(temp);
++		temp[0] = fcall[8];
++		temp[1] = '\0';
++		lv2 = atoi(temp);
++		if (lv1 >= 0 && lv1<5 && lv2 >= 0 && lv2 <= 9)
++		{
++			id = lv1 * 10;
++			id = id + lv2;
++		}
++		else if (lv1 == 5 && lv2 == 0)
++		{
++			id = lv1 * 10;
++		}
++	
++		key = hashing(id);
++		for (i =0; i<=10; i++)
++		{
++			if (fparray[key][i] == id)
++			{
++				val = htcalls[id]();
++				return val;
++			}
++		}
++        }
++	cprintf("\nWrong system call please check the parameter passed!\n");
++	return -1;
++}
++
++//sysproc part
++int sys_ls_call01(void)
++{
++  char* fcall;
++  if (argptr(0, (char **) &fcall, sizeof(char)*10) < 0)
++  return -1;
++  
++  return linear(fcall);
++}
++int 
++sys_ls_call02(void)
++{
++  char* fcall;
++  if (argptr(0, (char **) &fcall, (sizeof(char)*10)) < 0)
++  return -1;
++  int i= linear(fcall);
++  return i;
++}
++int 
++sys_ls_call03(void)
++{
++  char* fcall;
++  if (argptr(0, (char **) &fcall, (sizeof(char)*10)) < 0)
++  return -1;
++ 
++  return linear(fcall);
++}
++int 
++sys_ls_call04(void)
++{
++  char* fcall;
++  if (argptr(0, (char **) &fcall, (sizeof(char)*10)) < 0)
++  return -1;
++
++  return linear(fcall);
++}
++int 
++sys_ls_call05(void)
++{
++  char* fcall;
++  if (argptr(0, (char **) &fcall, (sizeof(char)*10)) < 0)
++  return -1;
++ 
++  return linear(fcall);
++}
++int 
++sys_ls_call06(void)
++{
++  char* fcall;
++  if (argptr(0, (char **) &fcall, (sizeof(char)*10)) < 0)
++  return -1;
++  
++  return linear(fcall);
++}
++int 
++sys_ls_call07(void)
++{
++  char* fcall;
++  if (argptr(0, (char **) &fcall, (sizeof(char)*10)) < 0)
++  return -1;
++
++  return linear(fcall);
++}
++int 
++sys_ls_call08(void)
++{
++  char* fcall;
++  if (argptr(0, (char **) &fcall, (sizeof(char)*10)) < 0)
++  return -1;
++ 
++  return linear(fcall);
++}
++int 
++sys_ls_call09(void)
++{
++  char* fcall;
++  if (argptr(0, (char **) &fcall, (sizeof(char)*10)) < 0)
++  return -1;
++ 
++  return linear(fcall);
++}
++int 
++sys_ls_call10(void)
++{
++  char* fcall;
++  if (argptr(0, (char **) &fcall, (sizeof(char)*10)) < 0)
++  return -1;
++ 
++  return linear(fcall);
++}
++int 
++sys_ls_call11(void)
++{
++  char* fcall;
++  if (argptr(0, (char **) &fcall, (sizeof(char)*10)) < 0)
++  return -1;
++ 
++  return linear(fcall);
++}
++int 
++sys_ls_call12(void)
++{
++  char* fcall;
++  if (argptr(0, (char **) &fcall, (sizeof(char)*10)) < 0)
++  return -1;
++ 
++  return linear(fcall);
++}
++int 
++sys_ls_call13(void)
++{
++  char* fcall;
++  if (argptr(0, (char **) &fcall, (sizeof(char)*10)) < 0)
++  return -1;
++ 
++  return linear(fcall);
++}
++int 
++sys_ls_call14(void)
++{
++  char* fcall;
++  if (argptr(0, (char **) &fcall, (sizeof(char)*10)) < 0)
++  return -1;
++ 
++  return linear(fcall);
++}
++int 
++sys_ls_call15(void)
++{
++  char* fcall;
++  if (argptr(0, (char **) &fcall, (sizeof(char)*10)) < 0)
++  return -1;
++ 
++  return linear(fcall);
++}
++int 
++sys_ls_call16(void)
++{
++  char* fcall;
++  if (argptr(0, (char **) &fcall, (sizeof(char)*10)) < 0)
++  return -1;
++ 
++  return linear(fcall);
++}
++int 
++sys_ls_call17(void)
++{
++  char* fcall;
++  if (argptr(0, (char **) &fcall, (sizeof(char)*10)) < 0)
++  return -1;
++ 
++  return linear(fcall);
++}
++int 
++sys_ls_call18(void)
++{
++  char* fcall;
++  if (argptr(0, (char **) &fcall, (sizeof(char)*10)) < 0)
++  return -1;
++
++  return linear(fcall);
++}
++int 
++sys_ls_call19(void)
++{
++  char* fcall;
++  if (argptr(0, (char **) &fcall, (sizeof(char)*10)) < 0)
++  return -1;
++
++  return linear(fcall);
++}
++int 
++sys_ls_call20(void)
++{
++  char* fcall;
++  if (argptr(0, (char **) &fcall, (sizeof(char)*10)) < 0)
++  return -1;
++ 
++  return linear(fcall);
++}
++int 
++sys_ls_call21(void)
++{
++  char* fcall;
++  if (argptr(0, (char **) &fcall, (sizeof(char)*10)) < 0)
++  return -1;
++ 
++  return linear(fcall);
++}
++int 
++sys_ls_call22(void)
++{
++  char* fcall;
++  if (argptr(0, (char **) &fcall, (sizeof(char)*10)) < 0)
++  return -1;
++ 
++  return linear(fcall);
++}
++int 
++sys_ls_call23(void)
++{
++  char* fcall;
++  if (argptr(0, (char **) &fcall, (sizeof(char)*10)) < 0)
++  return -1;
++ 
++  return linear(fcall);
++}
++int 
++sys_ls_call24(void)
++{
++  char* fcall;
++  if (argptr(0, (char **) &fcall, (sizeof(char)*10)) < 0)
++  return -1;
++ 
++  return linear(fcall);
++}
++int 
++sys_ls_call25(void)
++{
++  char* fcall;
++  if (argptr(0, (char **) &fcall, (sizeof(char)*10)) < 0)
++  return -1;
++ 
++  return linear(fcall);
++}
++int 
++sys_ls_call26(void)
++{
++  char* fcall;
++  if (argptr(0, (char **) &fcall, (sizeof(char)*10)) < 0)
++  return -1;
++ 
++  return linear(fcall);
++}
++int 
++sys_ls_call27(void)
++{
++  char* fcall;
++  if (argptr(0, (char **) &fcall, (sizeof(char)*10)) < 0)
++  return -1;
++ 
++  return linear(fcall);
++}
++int 
++sys_ls_call28(void)
++{
++  char* fcall;
++  if (argptr(0, (char **) &fcall, (sizeof(char)*10)) < 0)
++  return -1;
++ 
++  return linear(fcall);
++}
++int 
++sys_ls_call29(void)
++{
++  char* fcall;
++  if (argptr(0, (char **) &fcall, (sizeof(char)*10)) < 0)
++  return -1;
++ 
++  return linear(fcall);
++}
++int 
++sys_ls_call30(void)
++{
++  char* fcall;
++  if (argptr(0, (char **) &fcall, (sizeof(char)*10)) < 0)
++  return -1;
++ 
++  return linear(fcall);
++}
++int 
++sys_ls_call31(void)
++{
++  char* fcall;
++  if (argptr(0, (char **) &fcall, (sizeof(char)*10)) < 0)
++  return -1;
++ 
++  return linear(fcall);
++}
++int 
++sys_ls_call32(void)
++{
++  char* fcall;
++  if (argptr(0, (char **) &fcall, (sizeof(char)*10)) < 0)
++  return -1;
++
++  return linear(fcall);
++}
++int 
++sys_ls_call33(void)
++{
++  char* fcall;
++  if (argptr(0, (char **) &fcall, (sizeof(char)*10)) < 0)
++  return -1;
++ 
++  return linear(fcall);
++}
++int 
++sys_ls_call34(void)
++{
++  char* fcall;
++  if (argptr(0, (char **) &fcall, (sizeof(char)*10)) < 0)
++  return -1;
++ 
++  return linear(fcall);
++}
++int 
++sys_ls_call35(void)
++{
++  char* fcall;
++  if (argptr(0, (char **) &fcall, (sizeof(char)*10)) < 0)
++  return -1;
++ 
++  return linear(fcall);
++}
++int 
++sys_ls_call36(void)
++{
++  char* fcall;
++  if (argptr(0, (char **) &fcall, (sizeof(char)*10)) < 0)
++  return -1;
++ 
++  return linear(fcall);
++}
++int 
++sys_ls_call37(void)
++{
++  char* fcall;
++  if (argptr(0, (char **) &fcall, (sizeof(char)*10)) < 0)
++  return -1;
++ 
++  return linear(fcall);
++}
++int 
++sys_ls_call38(void)
++{
++  char* fcall;
++  if (argptr(0, (char **) &fcall, (sizeof(char)*10)) < 0)
++  return -1;
++ 
++  return linear(fcall);
++}
++int 
++sys_ls_call39(void)
++{
++  char* fcall;
++  if (argptr(0, (char **) &fcall, (sizeof(char)*10)) < 0)
++  return -1;
++ 
++  return linear(fcall);
++}
++int 
++sys_ls_call40(void)
++{
++  char* fcall;
++  if (argptr(0, (char **) &fcall, (sizeof(char)*10)) < 0)
++  return -1;
++ 
++  return linear(fcall);
++}
++int 
++sys_ls_call41(void)
++{
++  char* fcall;
++  if (argptr(0, (char **) &fcall, (sizeof(char)*10)) < 0)
++  return -1;
++ 
++  return linear(fcall);
++}
++int 
++sys_ls_call42(void)
++{
++  char* fcall;
++  if (argptr(0, (char **) &fcall, (sizeof(char)*10)) < 0)
++  return -1;
++ 
++  return linear(fcall);
++}
++int 
++sys_ls_call43(void)
++{
++  char* fcall;
++  if (argptr(0, (char **) &fcall, (sizeof(char)*10)) < 0)
++  return -1;
++ 
++  return linear(fcall);
++}
++int 
++sys_ls_call44(void)
++{
++  char* fcall;
++  if (argptr(0, (char **) &fcall, (sizeof(char)*10)) < 0)
++  return -1;
++ 
++  return linear(fcall);
++}
++int 
++sys_ls_call45(void)
++{
++  char* fcall;
++  if (argptr(0, (char **) &fcall, (sizeof(char)*10)) < 0)
++  return -1;
++ 
++  return linear(fcall);
++}
++int 
++sys_ls_call46(void)
++{
++  char* fcall;
++  if (argptr(0, (char **) &fcall, (sizeof(char)*10)) < 0)
++  return -1;
++  linear(fcall);
++  return linear(fcall);
++}
++int 
++sys_ls_call47(void)
++{
++  char* fcall;
++  if (argptr(0, (char **) &fcall, (sizeof(char)*10)) < 0)
++  return -1;
++ 
++  return linear(fcall);
++}
++int 
++sys_ls_call48(void)
++{
++  char* fcall;
++  if (argptr(0, (char **) &fcall, (sizeof(char)*10)) < 0)
++  return -1;
++ 
++  return linear(fcall);
++}
++int 
++sys_ls_call49(void)
++{
++  char* fcall;
++  if (argptr(0, (char **) &fcall, (sizeof(char)*10)) < 0)
++  return -1;
++ 
++  return linear(fcall);
++}
++int 
++sys_ls_call50(void)
++{
++  char* fcall;
++  if (argptr(0, (char **) &fcall, (sizeof(char)*10)) < 0)
++  return -1;
++
++  return linear(fcall);
++}
++
++
++int 
++sys_ht_call01(void)
++{
++  char* fcall;
++  if (argptr(0, (char **) &fcall, (sizeof(char)*10)) < 0)
++  return -1;
++
++  return hash(fcall);
++}
++int 
++sys_ht_call02(void)
++{
++  char* fcall;
++  if (argptr(0, (char **) &fcall, (sizeof(char)*10)) < 0)
++  return -1;
++  int i= hash(fcall);
++  return i;
++}
++int 
++sys_ht_call03(void)
++{
++  char* fcall;
++  if (argptr(0, (char **) &fcall, (sizeof(char)*10)) < 0)
++  return -1;
++ 
++  return hash(fcall);
++}
++int 
++sys_ht_call04(void)
++{
++  char* fcall;
++  if (argptr(0, (char **) &fcall, (sizeof(char)*10)) < 0)
++  return -1;
++
++  return hash(fcall);
++}
++int 
++sys_ht_call05(void)
++{
++  char* fcall;
++  if (argptr(0, (char **) &fcall, (sizeof(char)*10)) < 0)
++  return -1;
++ 
++  return hash(fcall);
++}
++int 
++sys_ht_call06(void)
++{
++  char* fcall;
++  if (argptr(0, (char **) &fcall, (sizeof(char)*10)) < 0)
++  return -1;
++  
++  return hash(fcall);
++}
++int 
++sys_ht_call07(void)
++{
++  char* fcall;
++  if (argptr(0, (char **) &fcall, (sizeof(char)*10)) < 0)
++  return -1;
++
++  return hash(fcall);
++}
++int 
++sys_ht_call08(void)
++{
++  char* fcall;
++  if (argptr(0, (char **) &fcall, (sizeof(char)*10)) < 0)
++  return -1;
++ 
++  return hash(fcall);
++}
++int 
++sys_ht_call09(void)
++{
++  char* fcall;
++  if (argptr(0, (char **) &fcall, (sizeof(char)*10)) < 0)
++  return -1;
++ 
++  return hash(fcall);
++}
++int 
++sys_ht_call10(void)
++{
++  char* fcall;
++  if (argptr(0, (char **) &fcall, (sizeof(char)*10)) < 0)
++  return -1;
++ 
++  return hash(fcall);
++}
++int 
++sys_ht_call11(void)
++{
++  char* fcall;
++  if (argptr(0, (char **) &fcall, (sizeof(char)*10)) < 0)
++  return -1;
++ 
++  return hash(fcall);
++}
++int 
++sys_ht_call12(void)
++{
++  char* fcall;
++  if (argptr(0, (char **) &fcall, (sizeof(char)*10)) < 0)
++  return -1;
++ 
++  return hash(fcall);
++}
++int 
++sys_ht_call13(void)
++{
++  char* fcall;
++  if (argptr(0, (char **) &fcall, (sizeof(char)*10)) < 0)
++  return -1;
++ 
++  return hash(fcall);
++}
++int 
++sys_ht_call14(void)
++{
++  char* fcall;
++  if (argptr(0, (char **) &fcall, (sizeof(char)*10)) < 0)
++  return -1;
++ 
++  return hash(fcall);
++}
++int 
++sys_ht_call15(void)
++{
++  char* fcall;
++  if (argptr(0, (char **) &fcall, (sizeof(char)*10)) < 0)
++  return -1;
++ 
++  return hash(fcall);
++}
++int 
++sys_ht_call16(void)
++{
++  char* fcall;
++  if (argptr(0, (char **) &fcall, (sizeof(char)*10)) < 0)
++  return -1;
++ 
++  return hash(fcall);
++}
++int 
++sys_ht_call17(void)
++{
++  char* fcall;
++  if (argptr(0, (char **) &fcall, (sizeof(char)*10)) < 0)
++  return -1;
++ 
++  return hash(fcall);
++}
++int 
++sys_ht_call18(void)
++{
++  char* fcall;
++  if (argptr(0, (char **) &fcall, (sizeof(char)*10)) < 0)
++  return -1;
++
++  return hash(fcall);
++}
++int 
++sys_ht_call19(void)
++{
++  char* fcall;
++  if (argptr(0, (char **) &fcall, (sizeof(char)*10)) < 0)
++  return -1;
++
++  return hash(fcall);
++}
++int 
++sys_ht_call20(void)
++{
++  char* fcall;
++  if (argptr(0, (char **) &fcall, (sizeof(char)*10)) < 0)
++  return -1;
++ 
++  return hash(fcall);
++}
++int 
++sys_ht_call21(void)
++{
++  char* fcall;
++  if (argptr(0, (char **) &fcall, (sizeof(char)*10)) < 0)
++  return -1;
++ 
++  return hash(fcall);
++}
++int 
++sys_ht_call22(void)
++{
++  char* fcall;
++  if (argptr(0, (char **) &fcall, (sizeof(char)*10)) < 0)
++  return -1;
++ 
++  return hash(fcall);
++}
++int 
++sys_ht_call23(void)
++{
++  char* fcall;
++  if (argptr(0, (char **) &fcall, (sizeof(char)*10)) < 0)
++  return -1;
++ 
++  return hash(fcall);
++}
++int 
++sys_ht_call24(void)
++{
++  char* fcall;
++  if (argptr(0, (char **) &fcall, (sizeof(char)*10)) < 0)
++  return -1;
++ 
++  return hash(fcall);
++}
++int 
++sys_ht_call25(void)
++{
++  char* fcall;
++  if (argptr(0, (char **) &fcall, (sizeof(char)*10)) < 0)
++  return -1;
++ 
++  return hash(fcall);
++}
++int 
++sys_ht_call26(void)
++{
++  char* fcall;
++  if (argptr(0, (char **) &fcall, (sizeof(char)*10)) < 0)
++  return -1;
++ 
++  return hash(fcall);
++}
++int 
++sys_ht_call27(void)
++{
++  char* fcall;
++  if (argptr(0, (char **) &fcall, (sizeof(char)*10)) < 0)
++  return -1;
++ 
++  return hash(fcall);
++}
++int 
++sys_ht_call28(void)
++{
++  char* fcall;
++  if (argptr(0, (char **) &fcall, (sizeof(char)*10)) < 0)
++  return -1;
++ 
++  return hash(fcall);
++}
++int 
++sys_ht_call29(void)
++{
++  char* fcall;
++  if (argptr(0, (char **) &fcall, (sizeof(char)*10)) < 0)
++  return -1;
++ 
++  return hash(fcall);
++}
++int 
++sys_ht_call30(void)
++{
++  char* fcall;
++  if (argptr(0, (char **) &fcall, (sizeof(char)*10)) < 0)
++  return -1;
++ 
++  return hash(fcall);
++}
++int 
++sys_ht_call31(void)
++{
++  char* fcall;
++  if (argptr(0, (char **) &fcall, (sizeof(char)*10)) < 0)
++  return -1;
++ 
++  return hash(fcall);
++}
++int 
++sys_ht_call32(void)
++{
++  char* fcall;
++  if (argptr(0, (char **) &fcall, (sizeof(char)*10)) < 0)
++  return -1;
++
++  return hash(fcall);
++}
++int 
++sys_ht_call33(void)
++{
++  char* fcall;
++  if (argptr(0, (char **) &fcall, (sizeof(char)*10)) < 0)
++  return -1;
++ 
++  return hash(fcall);
++}
++int 
++sys_ht_call34(void)
++{
++  char* fcall;
++  if (argptr(0, (char **) &fcall, (sizeof(char)*10)) < 0)
++  return -1;
++ 
++  return hash(fcall);
++}
++int 
++sys_ht_call35(void)
++{
++  char* fcall;
++  if (argptr(0, (char **) &fcall, (sizeof(char)*10)) < 0)
++  return -1;
++ 
++  return hash(fcall);
++}
++int 
++sys_ht_call36(void)
++{
++  char* fcall;
++  if (argptr(0, (char **) &fcall, (sizeof(char)*10)) < 0)
++  return -1;
++ 
++  return hash(fcall);
++}
++int 
++sys_ht_call37(void)
++{
++  char* fcall;
++  if (argptr(0, (char **) &fcall, (sizeof(char)*10)) < 0)
++  return -1;
++ 
++  return hash(fcall);
++}
++int 
++sys_ht_call38(void)
++{
++  char* fcall;
++  if (argptr(0, (char **) &fcall, (sizeof(char)*10)) < 0)
++  return -1;
++ 
++  return hash(fcall);
++}
++int 
++sys_ht_call39(void)
++{
++  char* fcall;
++  if (argptr(0, (char **) &fcall, (sizeof(char)*10)) < 0)
++  return -1;
++ 
++  return hash(fcall);
++}
++int 
++sys_ht_call40(void)
++{
++  char* fcall;
++  if (argptr(0, (char **) &fcall, (sizeof(char)*10)) < 0)
++  return -1;
++ 
++  return hash(fcall);
++}
++int 
++sys_ht_call41(void)
++{
++  char* fcall;
++  if (argptr(0, (char **) &fcall, (sizeof(char)*10)) < 0)
++  return -1;
++ 
++  return hash(fcall);
++}
++int 
++sys_ht_call42(void)
++{
++  char* fcall;
++  if (argptr(0, (char **) &fcall, (sizeof(char)*10)) < 0)
++  return -1;
++ 
++  return hash(fcall);
++}
++int 
++sys_ht_call43(void)
++{
++  char* fcall;
++  if (argptr(0, (char **) &fcall, (sizeof(char)*10)) < 0)
++  return -1;
++ 
++  return hash(fcall);
++}
++int 
++sys_ht_call44(void)
++{
++  char* fcall;
++  if (argptr(0, (char **) &fcall, (sizeof(char)*10)) < 0)
++  return -1;
++ 
++  return hash(fcall);
++}
++int 
++sys_ht_call45(void)
++{
++  char* fcall;
++  if (argptr(0, (char **) &fcall, (sizeof(char)*10)) < 0)
++  return -1;
++ 
++  return hash(fcall);
++}
++int 
++sys_ht_call46(void)
++{
++  char* fcall;
++  if (argptr(0, (char **) &fcall, (sizeof(char)*10)) < 0)
++  return -1;
++  hash(fcall);
++  return hash(fcall);
++}
++int 
++sys_ht_call47(void)
++{
++  char* fcall;
++  if (argptr(0, (char **) &fcall, (sizeof(char)*10)) < 0)
++  return -1;
++ 
++  return hash(fcall);
++}
++int 
++sys_ht_call48(void)
++{
++  char* fcall;
++  if (argptr(0, (char **) &fcall, (sizeof(char)*10)) < 0)
++  return -1;
++ 
++  return hash(fcall);
++}
++int 
++sys_ht_call49(void)
++{
++  char* fcall;
++  if (argptr(0, (char **) &fcall, (sizeof(char)*10)) < 0)
++  return -1;
++ 
++  return hash(fcall);
++}
++int 
++sys_ht_call50(void)
++{
++  char* fcall;
++  if (argptr(0, (char **) &fcall, (sizeof(char)*10)) < 0)
++  return -1;
++
++  return hash(fcall);
++}
++
++
++
++//syscall.h part
++
++extern int sys_ls_call01(void);
++extern int sys_ls_call02(void);
++extern int sys_ls_call03(void);
++extern int sys_ls_call04(void);
++extern int sys_ls_call05(void);
++extern int sys_ls_call06(void);
++extern int sys_ls_call07(void);
++extern int sys_ls_call08(void);
++extern int sys_ls_call09(void);
++extern int sys_ls_call10(void);
++extern int sys_ls_call11(void);
++extern int sys_ls_call12(void);
++extern int sys_ls_call13(void);
++extern int sys_ls_call14(void);
++extern int sys_ls_call15(void);
++extern int sys_ls_call16(void);
++extern int sys_ls_call17(void);
++extern int sys_ls_call18(void);
++extern int sys_ls_call19(void);
++extern int sys_ls_call20(void);
++extern int sys_ls_call21(void);
++extern int sys_ls_call22(void);
++extern int sys_ls_call23(void);
++extern int sys_ls_call24(void);
++extern int sys_ls_call25(void);
++extern int sys_ls_call26(void);
++extern int sys_ls_call27(void);
++extern int sys_ls_call28(void);
++extern int sys_ls_call29(void);
++extern int sys_ls_call30(void);
++extern int sys_ls_call31(void);
++extern int sys_ls_call32(void);
++extern int sys_ls_call33(void);
++extern int sys_ls_call34(void);
++extern int sys_ls_call35(void);
++extern int sys_ls_call36(void);
++extern int sys_ls_call37(void);
++extern int sys_ls_call38(void);
++extern int sys_ls_call39(void);
++extern int sys_ls_call40(void);
++extern int sys_ls_call41(void);
++extern int sys_ls_call42(void);
++extern int sys_ls_call43(void);
++extern int sys_ls_call44(void);
++extern int sys_ls_call45(void);
++extern int sys_ls_call46(void);
++extern int sys_ls_call47(void);
++extern int sys_ls_call48(void);
++extern int sys_ls_call49(void);
++extern int sys_ls_call50(void);
++
++extern int sys_ht_call01(void);
++extern int sys_ht_call02(void);
++extern int sys_ht_call03(void);
++extern int sys_ht_call04(void);
++extern int sys_ht_call05(void);
++extern int sys_ht_call06(void);
++extern int sys_ht_call07(void);
++extern int sys_ht_call08(void);
++extern int sys_ht_call09(void);
++extern int sys_ht_call10(void);
++extern int sys_ht_call11(void);
++extern int sys_ht_call12(void);
++extern int sys_ht_call13(void);
++extern int sys_ht_call14(void);
++extern int sys_ht_call15(void);
++extern int sys_ht_call16(void);
++extern int sys_ht_call17(void);
++extern int sys_ht_call18(void);
++extern int sys_ht_call19(void);
++extern int sys_ht_call20(void);
++extern int sys_ht_call21(void);
++extern int sys_ht_call22(void);
++extern int sys_ht_call23(void);
++extern int sys_ht_call24(void);
++extern int sys_ht_call25(void);
++extern int sys_ht_call26(void);
++extern int sys_ht_call27(void);
++extern int sys_ht_call28(void);
++extern int sys_ht_call29(void);
++extern int sys_ht_call30(void);
++extern int sys_ht_call31(void);
++extern int sys_ht_call32(void);
++extern int sys_ht_call33(void);
++extern int sys_ht_call34(void);
++extern int sys_ht_call35(void);
++extern int sys_ht_call36(void);
++extern int sys_ht_call37(void);
++extern int sys_ht_call38(void);
++extern int sys_ht_call39(void);
++extern int sys_ht_call40(void);
++extern int sys_ht_call41(void);
++extern int sys_ht_call42(void);
++extern int sys_ht_call43(void);
++extern int sys_ht_call44(void);
++extern int sys_ht_call45(void);
++extern int sys_ht_call46(void);
++extern int sys_ht_call47(void);
++extern int sys_ht_call48(void);
++extern int sys_ht_call49(void);
++extern int sys_ht_call50(void);
++
++static int (*cs550_syscalls[])(void) = {
++[LS_ls_call01] sys_ls_call01,
++[LS_ls_call02] sys_ls_call02,
++[LS_ls_call03] sys_ls_call03,
++[LS_ls_call04] sys_ls_call04,
++[LS_ls_call05] sys_ls_call05,
++[LS_ls_call06] sys_ls_call06,
++[LS_ls_call07] sys_ls_call07,
++[LS_ls_call08] sys_ls_call08,
++[LS_ls_call09] sys_ls_call09,
++[LS_ls_call10] sys_ls_call10,
++[LS_ls_call11] sys_ls_call11,
++[LS_ls_call12] sys_ls_call12,
++[LS_ls_call13] sys_ls_call13,
++[LS_ls_call14] sys_ls_call14,
++[LS_ls_call15] sys_ls_call15,
++[LS_ls_call16] sys_ls_call16,
++[LS_ls_call17] sys_ls_call17,
++[LS_ls_call18] sys_ls_call18,
++[LS_ls_call19] sys_ls_call19,
++[LS_ls_call20] sys_ls_call20,
++[LS_ls_call21] sys_ls_call21,
++[LS_ls_call22] sys_ls_call22,
++[LS_ls_call23] sys_ls_call23,
++[LS_ls_call24] sys_ls_call24,
++[LS_ls_call25] sys_ls_call25,
++[LS_ls_call26] sys_ls_call26,
++[LS_ls_call27] sys_ls_call27,
++[LS_ls_call28] sys_ls_call28,
++[LS_ls_call29] sys_ls_call29,
++[LS_ls_call30] sys_ls_call30,
++[LS_ls_call31] sys_ls_call31,
++[LS_ls_call32] sys_ls_call32,
++[LS_ls_call33] sys_ls_call33,
++[LS_ls_call34] sys_ls_call34,
++[LS_ls_call35] sys_ls_call35,
++[LS_ls_call36] sys_ls_call36,
++[LS_ls_call37] sys_ls_call37,
++[LS_ls_call38] sys_ls_call38,
++[LS_ls_call39] sys_ls_call39,
++[LS_ls_call40] sys_ls_call40,
++[LS_ls_call41] sys_ls_call41,
++[LS_ls_call42] sys_ls_call42,
++[LS_ls_call43] sys_ls_call43,
++[LS_ls_call44] sys_ls_call44,
++[LS_ls_call45] sys_ls_call45,
++[LS_ls_call46] sys_ls_call46,
++[LS_ls_call47] sys_ls_call47,
++[LS_ls_call48] sys_ls_call48,
++[LS_ls_call49] sys_ls_call49,
++[LS_ls_call50] sys_ls_call50,
++[HT_ht_call01] sys_ht_call01,
++[HT_ht_call02] sys_ht_call02,
++[HT_ht_call03] sys_ht_call03,
++[HT_ht_call04] sys_ht_call04,
++[HT_ht_call05] sys_ht_call05,
++[HT_ht_call06] sys_ht_call06,
++[HT_ht_call07] sys_ht_call07,
++[HT_ht_call08] sys_ht_call08,
++[HT_ht_call09] sys_ht_call09,
++[HT_ht_call10] sys_ht_call10,
++[HT_ht_call11] sys_ht_call11,
++[HT_ht_call12] sys_ht_call12,
++[HT_ht_call13] sys_ht_call13,
++[HT_ht_call14] sys_ht_call14,
++[HT_ht_call15] sys_ht_call15,
++[HT_ht_call16] sys_ht_call16,
++[HT_ht_call17] sys_ht_call17,
++[HT_ht_call18] sys_ht_call18,
++[HT_ht_call19] sys_ht_call19,
++[HT_ht_call20] sys_ht_call20,
++[HT_ht_call21] sys_ht_call21,
++[HT_ht_call22] sys_ht_call22,
++[HT_ht_call23] sys_ht_call23,
++[HT_ht_call24] sys_ht_call24,
++[HT_ht_call25] sys_ht_call25,
++[HT_ht_call26] sys_ht_call26,
++[HT_ht_call27] sys_ht_call27,
++[HT_ht_call28] sys_ht_call28,
++[HT_ht_call29] sys_ht_call29,
++[HT_ht_call30] sys_ht_call30,
++[HT_ht_call31] sys_ht_call31,
++[HT_ht_call32] sys_ht_call32,
++[HT_ht_call33] sys_ht_call33,
++[HT_ht_call34] sys_ht_call34,
++[HT_ht_call35] sys_ht_call35,
++[HT_ht_call36] sys_ht_call36,
++[HT_ht_call37] sys_ht_call37,
++[HT_ht_call38] sys_ht_call38,
++[HT_ht_call39] sys_ht_call39,
++[HT_ht_call40] sys_ht_call40,
++[HT_ht_call41] sys_ht_call41,
++[HT_ht_call42] sys_ht_call42,
++[HT_ht_call43] sys_ht_call43,
++[HT_ht_call44] sys_ht_call44,
++[HT_ht_call45] sys_ht_call45,
++[HT_ht_call46] sys_ht_call46,
++[HT_ht_call47] sys_ht_call47,
++[HT_ht_call48] sys_ht_call48,
++[HT_ht_call49] sys_ht_call49,
++[HT_ht_call50] sys_ht_call50,
++};
++
++//syscall.c part
++void
++cs550_syscall(void)
++{
++  int num;
++
++  num = proc->tf->eax;
++   
++  if(num > 0 && num < NELEM(cs550_syscalls) && cs550_syscalls[num]) {
++    proc->tf->eax = cs550_syscalls[num]();
++  } else {
++    cprintf("%d %s: unknown sys call %d\n",
++            proc->pid, proc->name, num);
++    proc->tf->eax = -1;
++  }
++}
+diff -Nur xv6-cs550-2016,1s-p1-baseline/cs550_user.c xv6-cs550-2016,1s-p2-working/cs550_user.c
+--- xv6-cs550-2016,1s-p1-baseline/cs550_user.c	1969-12-31 19:00:00.000000000 -0500
++++ xv6-cs550-2016,1s-p2-working/cs550_user.c	2016-05-10 15:01:30.981774130 -0400
+@@ -0,0 +1,217 @@
++
++#include "types.h"
++#include "stat.h"
++#include "user.h"
++#include "date.h"
++int avg(int val[100])
++{
++ int j,sum=0;
++for(j=0;j<100;j++)
++{
++	sum=val[j]+sum;
++}
++
++return sum;
++}
++int
++main(int argc, char *argv[])
++{
++
++//getpid system call:
++int st,et,ret[10],i,v;
++
++
++//ls_call system call:
++printf(1,"\nTesting LS_CALL system call\n");
++printf(1,"ls_call01= %d  \n", ls_call01("ls_call01"));
++printf(1,"ls_call02= %d  \n", ls_call02("ls_call02"));
++printf(1,"ls_call03= %d  \n", ls_call03("ls_call03"));
++printf(1,"ls_call04= %d  \n", ls_call04("ls_call04"));
++printf(1,"ls_call05= %d  \n", ls_call05("ls_call05"));
++printf(1,"ls_call06= %d  \n", ls_call06("ls_call06"));
++printf(1,"ls_call07= %d  \n", ls_call07("ls_call07"));
++printf(1,"ls_call08= %d  \n", ls_call08("ls_call08"));
++printf(1,"ls_call09= %d  \n", ls_call09("ls_call09"));
++printf(1,"ls_call10= %d  \n", ls_call10("ls_call10"));
++printf(1,"ls_call11= %d  \n", ls_call11("ls_call11"));
++printf(1,"ls_call12= %d  \n", ls_call12("ls_call12"));
++printf(1,"ls_call13= %d  \n", ls_call13("ls_call13"));
++printf(1,"ls_call14= %d  \n", ls_call14("ls_call14"));
++printf(1,"ls_call15= %d  \n", ls_call15("ls_call15"));
++printf(1,"ls_call16= %d  \n", ls_call16("ls_call16"));
++printf(1,"ls_call17= %d  \n", ls_call17("ls_call17"));
++printf(1,"ls_call18= %d  \n", ls_call18("ls_call18"));
++printf(1,"ls_call19= %d  \n", ls_call19("ls_call19"));
++printf(1,"ls_call20= %d  \n", ls_call20("ls_call20"));
++printf(1,"ls_call21= %d  \n", ls_call21("ls_call21"));
++printf(1,"ls_call22= %d  \n", ls_call22("ls_call22"));
++printf(1,"ls_call23= %d  \n", ls_call23("ls_call23"));
++printf(1,"ls_call24= %d  \n", ls_call24("ls_call24"));
++printf(1,"ls_call25= %d  \n", ls_call25("ls_call25"));
++printf(1,"ls_call26= %d  \n", ls_call26("ls_call26"));
++printf(1,"ls_call27= %d  \n", ls_call27("ls_call27"));
++printf(1,"ls_call28= %d  \n", ls_call28("ls_call28"));
++printf(1,"ls_call29= %d  \n", ls_call29("ls_call29"));
++printf(1,"ls_call30= %d  \n", ls_call30("ls_call30"));
++printf(1,"ls_call31= %d  \n", ls_call31("ls_call31"));
++printf(1,"ls_call32= %d  \n", ls_call32("ls_call32"));
++printf(1,"ls_call33= %d  \n", ls_call33("ls_call33"));
++printf(1,"ls_call34= %d  \n", ls_call34("ls_call34"));
++printf(1,"ls_call35= %d  \n", ls_call35("ls_call35"));
++printf(1,"ls_call36= %d  \n", ls_call36("ls_call36"));
++printf(1,"ls_call37= %d  \n", ls_call37("ls_call37"));
++printf(1,"ls_call38= %d  \n", ls_call38("ls_call38"));
++printf(1,"ls_call39= %d  \n", ls_call39("ls_call39"));
++printf(1,"ls_call40= %d  \n", ls_call40("ls_call40"));
++printf(1,"ls_call41= %d  \n", ls_call41("ls_call41"));
++printf(1,"ls_call42= %d  \n", ls_call42("ls_call42"));
++printf(1,"ls_call43= %d  \n", ls_call43("ls_call43"));
++printf(1,"ls_call44= %d  \n", ls_call44("ls_call44"));
++printf(1,"ls_call45= %d  \n", ls_call45("ls_call45"));
++printf(1,"ls_call46= %d  \n", ls_call46("ls_call46"));
++printf(1,"ls_call47= %d  \n", ls_call47("ls_call47"));
++printf(1,"ls_call48= %d  \n", ls_call48("ls_call48"));
++printf(1,"ls_call49= %d  \n", ls_call49("ls_call49"));
++printf(1,"ls_call50= %d  \n", ls_call50("ls_call50"));
++
++
++//ht_call system call:
++printf(1,"\n Testing HT_CALL system call\n");
++printf(1,"ht_call01= %d  \n", ht_call01("ht_call01"));
++printf(1,"ht_call02= %d  \n", ht_call02("ht_call02"));
++printf(1,"ht_call03= %d  \n", ht_call03("ht_call03"));
++printf(1,"ht_call04= %d  \n", ht_call04("ht_call04"));
++printf(1,"ht_call05= %d  \n", ht_call05("ht_call05"));
++printf(1,"ht_call06= %d  \n", ht_call06("ht_call06"));
++printf(1,"ht_call07= %d  \n", ht_call07("ht_call07"));
++printf(1,"ht_call08= %d  \n", ht_call08("ht_call08"));
++printf(1,"ht_call09= %d  \n", ht_call09("ht_call09"));
++printf(1,"ht_call10= %d  \n", ht_call10("ht_call10"));
++printf(1,"ht_call11= %d  \n", ht_call11("ht_call11"));
++printf(1,"ht_call12= %d  \n", ht_call12("ht_call12"));
++printf(1,"ht_call13= %d  \n", ht_call13("ht_call13"));
++printf(1,"ht_call14= %d  \n", ht_call14("ht_call14"));
++printf(1,"ht_call15= %d  \n", ht_call15("ht_call15"));
++printf(1,"ht_call16= %d  \n", ht_call16("ht_call16"));
++printf(1,"ht_call17= %d  \n", ht_call17("ht_call17"));
++printf(1,"ht_call18= %d  \n", ht_call18("ht_call18"));
++printf(1,"ht_call19= %d  \n", ht_call19("ht_call19"));
++printf(1,"ht_call20= %d  \n", ht_call20("ht_call20"));
++printf(1,"ht_call21= %d  \n", ht_call21("ht_call21"));
++printf(1,"ht_call22= %d  \n", ht_call22("ht_call22"));
++printf(1,"ht_call23= %d  \n", ht_call23("ht_call23"));
++printf(1,"ht_call24= %d  \n", ht_call24("ht_call24"));
++printf(1,"ht_call25= %d  \n", ht_call25("ht_call25"));
++printf(1,"ht_call26= %d  \n", ht_call26("ht_call26"));
++printf(1,"ht_call27= %d  \n", ht_call27("ht_call27"));
++printf(1,"ht_call28= %d  \n", ht_call28("ht_call28"));
++printf(1,"ht_call29= %d  \n", ht_call29("ht_call29"));
++printf(1,"ht_call30= %d  \n", ht_call30("ht_call30"));
++printf(1,"ht_call31= %d  \n", ht_call31("ht_call31"));
++printf(1,"ht_call32= %d  \n", ht_call32("ht_call32"));
++printf(1,"ht_call33= %d  \n", ht_call33("ht_call33"));
++printf(1,"ht_call34= %d  \n", ht_call34("ht_call34"));
++printf(1,"ht_call35= %d  \n", ls_call35("ls_call35"));
++printf(1,"ht_call36= %d  \n", ls_call36("ls_call36"));
++printf(1,"ht_call37= %d  \n", ls_call37("ls_call37"));
++printf(1,"ht_call38= %d  \n", ls_call38("ls_call38"));
++printf(1,"ht_call39= %d  \n", ls_call39("ls_call39"));
++printf(1,"ht_call40= %d  \n", ls_call40("ls_call40"));
++printf(1,"ht_call41= %d  \n", ls_call41("ls_call41"));
++printf(1,"ht_call42= %d  \n", ls_call42("ls_call42"));
++printf(1,"ht_call43= %d  \n", ls_call43("ls_call43"));
++printf(1,"ht_call44= %d  \n", ls_call44("ls_call44"));
++printf(1,"ht_call45= %d  \n", ls_call45("ls_call45"));
++printf(1,"ht_call46= %d  \n", ls_call46("ls_call46"));
++printf(1,"ht_call47= %d  \n", ls_call47("ls_call47"));
++printf(1,"ht_call48= %d  \n", ls_call48("ls_call48"));
++printf(1,"ht_call49= %d  \n", ls_call49("ls_call49"));
++printf(1,"ht_call50= %d  \n", ls_call50("ls_call50"));
++
++//DATE system call:
++ struct rtcdate *mydate=malloc(sizeof(struct rtcdate));
++ date(mydate);
++ printf(1,"\nTesting SYS_DATE SYSTEM CALL \nday=%d month=%d year=%d\n\n",(int)mydate->day,(int)mydate->month,(int)mydate->year);
++ free(mydate);
++//Testing Get pid
++st=uptime();
++getpid();
++et=uptime();
++printf(1,"\nTesting timing of getpid() took are: %d\n", (et-st));
++
++//Testing timing of fastest linear call( ls_call01) and slowest (ls_call50) according to my algorithm
++st=uptime();
++for(i=0;i<10;i++)
++{
++v=ls_call01("ls_call01");
++et=et+v;
++et=et-v;
++et=uptime();
++ret[i]=et-st;
++}
++printf(1,"\nNo of ticks for of ls_call01 is 0.%d\n",ret[i]);
++st=uptime();
++for(i=0;i<1000;i++)
++{
++v=ls_call50("ls_call50");
++et=et+v;
++et=et-v;
++et=uptime();
++ret[i]=et-st;
++}
++et=uptime();
++ret[i]=(et-st)/1;
++printf(1,"\nNumber of ticks of ls_call50 is %d\n",ret[i]);
++
++//testing timing of fastest and slowest hash call (ht_call01) and slowest (ht_call29) according to my algorithm
++for(i=0;i<10;i++)
++{
++v=ht_call01("ht_call01");
++et=et+v;
++et=et-v;
++et=uptime();
++ret[i]=et-st;
++}
++printf(1,"\nNo of Nano SECS for of ht_call01 is 0.%d\n",ret[i]);
++st=uptime();
++for(i=0;i<2000;i++)
++{
++v=ht_call29("ht_call29");
++et=et+v;
++et=et-v;
++et=uptime();
++ret[i]=et-st;
++}
++et=uptime();
++ret[i]=(et-st)/2;
++printf(1,"\nNumber of NANO SECS of ht_call29 is %d\n",ret[i]);
++
++
++//Testing bad names:
++printf(1,"\nTesting bad names\n\nBad as arguments for ls_call system call\n");
++printf(1,"\nPassing ls_call200 for ls_Call01");
++ls_call01("ls_call200");
++printf(1,"\nPassing ht_Callakafklfl for ls_Call50");
++ls_call50("ht_Callakafklfl");
++
++printf(1,"\nTesting bad names\n\nBad as arguments for ht_call system call\n");
++printf(1,"\nPassing ls_call200 for ht_Call01");
++ht_call01("ht_call200");
++printf(1,"\nPassing ht_Callakafklfl for ht_Call50");
++ht_call01("ht_Callakafklfl");
++
++//Testing bad Address
++printf(1,"\nTesting Bad Address\n");
++mydate='\0';
++date(mydate);
++
++mydate=malloc(sizeof(struct rtcdate));
++mydate=(struct rtcdate*)((int)mydate-100);
++
++date(mydate);
++
++free(mydate);
++
++ exit();
++
++}
+diff -Nur xv6-cs550-2016,1s-p1-baseline/cs550_user.c~ xv6-cs550-2016,1s-p2-working/cs550_user.c~
+--- xv6-cs550-2016,1s-p1-baseline/cs550_user.c~	1969-12-31 19:00:00.000000000 -0500
++++ xv6-cs550-2016,1s-p2-working/cs550_user.c~	2016-05-10 15:00:16.113775937 -0400
+@@ -0,0 +1,217 @@
++
++#include "types.h"
++#include "stat.h"
++#include "user.h"
++#include "date.h"
++int avg(int val[100])
++{
++ int j,sum=0;
++for(j=0;j<100;j++)
++{
++	sum=val[j]+sum;
++}
++
++return sum;
++}
++int
++main(int argc, char *argv[])
++{
++
++//getpid system call:
++int st,et,ret[10],i,v;
++
++
++//ls_call system call:
++printf(1,"\nTesting LS_CALL system call\n");
++printf(1,"ls_call01= %d  \n", ls_call01("ls_call01"));
++printf(1,"ls_call02= %d  \n", ls_call02("ls_call02"));
++printf(1,"ls_call03= %d  \n", ls_call03("ls_call03"));
++printf(1,"ls_call04= %d  \n", ls_call04("ls_call04"));
++printf(1,"ls_call05= %d  \n", ls_call05("ls_call05"));
++printf(1,"ls_call06= %d  \n", ls_call06("ls_call06"));
++printf(1,"ls_call07= %d  \n", ls_call07("ls_call07"));
++printf(1,"ls_call08= %d  \n", ls_call08("ls_call08"));
++printf(1,"ls_call09= %d  \n", ls_call09("ls_call09"));
++printf(1,"ls_call10= %d  \n", ls_call10("ls_call10"));
++printf(1,"ls_call11= %d  \n", ls_call11("ls_call11"));
++printf(1,"ls_call12= %d  \n", ls_call12("ls_call12"));
++printf(1,"ls_call13= %d  \n", ls_call13("ls_call13"));
++printf(1,"ls_call14= %d  \n", ls_call14("ls_call14"));
++printf(1,"ls_call15= %d  \n", ls_call15("ls_call15"));
++printf(1,"ls_call16= %d  \n", ls_call16("ls_call16"));
++printf(1,"ls_call17= %d  \n", ls_call17("ls_call17"));
++printf(1,"ls_call18= %d  \n", ls_call18("ls_call18"));
++printf(1,"ls_call19= %d  \n", ls_call19("ls_call19"));
++printf(1,"ls_call20= %d  \n", ls_call20("ls_call20"));
++printf(1,"ls_call21= %d  \n", ls_call21("ls_call21"));
++printf(1,"ls_call22= %d  \n", ls_call22("ls_call22"));
++printf(1,"ls_call23= %d  \n", ls_call23("ls_call23"));
++printf(1,"ls_call24= %d  \n", ls_call24("ls_call24"));
++printf(1,"ls_call25= %d  \n", ls_call25("ls_call25"));
++printf(1,"ls_call26= %d  \n", ls_call26("ls_call26"));
++printf(1,"ls_call27= %d  \n", ls_call27("ls_call27"));
++printf(1,"ls_call28= %d  \n", ls_call28("ls_call28"));
++printf(1,"ls_call29= %d  \n", ls_call29("ls_call29"));
++printf(1,"ls_call30= %d  \n", ls_call30("ls_call30"));
++printf(1,"ls_call31= %d  \n", ls_call31("ls_call31"));
++printf(1,"ls_call32= %d  \n", ls_call32("ls_call32"));
++printf(1,"ls_call33= %d  \n", ls_call33("ls_call33"));
++printf(1,"ls_call34= %d  \n", ls_call34("ls_call34"));
++printf(1,"ls_call35= %d  \n", ls_call35("ls_call35"));
++printf(1,"ls_call36= %d  \n", ls_call36("ls_call36"));
++printf(1,"ls_call37= %d  \n", ls_call37("ls_call37"));
++printf(1,"ls_call38= %d  \n", ls_call38("ls_call38"));
++printf(1,"ls_call39= %d  \n", ls_call39("ls_call39"));
++printf(1,"ls_call40= %d  \n", ls_call40("ls_call40"));
++printf(1,"ls_call41= %d  \n", ls_call41("ls_call41"));
++printf(1,"ls_call42= %d  \n", ls_call42("ls_call42"));
++printf(1,"ls_call43= %d  \n", ls_call43("ls_call43"));
++printf(1,"ls_call44= %d  \n", ls_call44("ls_call44"));
++printf(1,"ls_call45= %d  \n", ls_call45("ls_call45"));
++printf(1,"ls_call46= %d  \n", ls_call46("ls_call46"));
++printf(1,"ls_call47= %d  \n", ls_call47("ls_call47"));
++printf(1,"ls_call48= %d  \n", ls_call48("ls_call48"));
++printf(1,"ls_call49= %d  \n", ls_call49("ls_call49"));
++printf(1,"ls_call50= %d  \n", ls_call50("ls_call50"));
++
++
++//ht_call system call:
++printf(1,"\n Testing HT_CALL system call\n");
++printf(1,"ht_call01= %d  \n", ht_call01("ht_call01"));
++printf(1,"ht_call02= %d  \n", ht_call02("ht_call02"));
++printf(1,"ht_call03= %d  \n", ht_call03("ht_call03"));
++printf(1,"ht_call04= %d  \n", ht_call04("ht_call04"));
++printf(1,"ht_call05= %d  \n", ht_call05("ht_call05"));
++printf(1,"ht_call06= %d  \n", ht_call06("ht_call06"));
++printf(1,"ht_call07= %d  \n", ht_call07("ht_call07"));
++printf(1,"ht_call08= %d  \n", ht_call08("ht_call08"));
++printf(1,"ht_call09= %d  \n", ht_call09("ht_call09"));
++printf(1,"ht_call10= %d  \n", ht_call10("ht_call10"));
++printf(1,"ht_call11= %d  \n", ht_call11("ht_call11"));
++printf(1,"ht_call12= %d  \n", ht_call12("ht_call12"));
++printf(1,"ht_call13= %d  \n", ht_call13("ht_call13"));
++printf(1,"ht_call14= %d  \n", ht_call14("ht_call14"));
++printf(1,"ht_call15= %d  \n", ht_call15("ht_call15"));
++printf(1,"ht_call16= %d  \n", ht_call16("ht_call16"));
++printf(1,"ht_call17= %d  \n", ht_call17("ht_call17"));
++printf(1,"ht_call18= %d  \n", ht_call18("ht_call18"));
++printf(1,"ht_call19= %d  \n", ht_call19("ht_call19"));
++printf(1,"ht_call20= %d  \n", ht_call20("ht_call20"));
++printf(1,"ht_call21= %d  \n", ht_call21("ht_call21"));
++printf(1,"ht_call22= %d  \n", ht_call22("ht_call22"));
++printf(1,"ht_call23= %d  \n", ht_call23("ht_call23"));
++printf(1,"ht_call24= %d  \n", ht_call24("ht_call24"));
++printf(1,"ht_call25= %d  \n", ht_call25("ht_call25"));
++printf(1,"ht_call26= %d  \n", ht_call26("ht_call26"));
++printf(1,"ht_call27= %d  \n", ht_call27("ht_call27"));
++printf(1,"ht_call28= %d  \n", ht_call28("ht_call28"));
++printf(1,"ht_call29= %d  \n", ht_call29("ht_call29"));
++printf(1,"ht_call30= %d  \n", ht_call30("ht_call30"));
++printf(1,"ht_call31= %d  \n", ht_call31("ht_call31"));
++printf(1,"ht_call32= %d  \n", ht_call32("ht_call32"));
++printf(1,"ht_call33= %d  \n", ht_call33("ht_call33"));
++printf(1,"ht_call34= %d  \n", ht_call34("ht_call34"));
++printf(1,"ht_call35= %d  \n", ls_call35("ls_call35"));
++printf(1,"ht_call36= %d  \n", ls_call36("ls_call36"));
++printf(1,"ht_call37= %d  \n", ls_call37("ls_call37"));
++printf(1,"ht_call38= %d  \n", ls_call38("ls_call38"));
++printf(1,"ht_call39= %d  \n", ls_call39("ls_call39"));
++printf(1,"ht_call40= %d  \n", ls_call40("ls_call40"));
++printf(1,"ht_call41= %d  \n", ls_call41("ls_call41"));
++printf(1,"ht_call42= %d  \n", ls_call42("ls_call42"));
++printf(1,"ht_call43= %d  \n", ls_call43("ls_call43"));
++printf(1,"ht_call44= %d  \n", ls_call44("ls_call44"));
++printf(1,"ht_call45= %d  \n", ls_call45("ls_call45"));
++printf(1,"ht_call46= %d  \n", ls_call46("ls_call46"));
++printf(1,"ht_call47= %d  \n", ls_call47("ls_call47"));
++printf(1,"ht_call48= %d  \n", ls_call48("ls_call48"));
++printf(1,"ht_call49= %d  \n", ls_call49("ls_call49"));
++printf(1,"ht_call50= %d  \n", ls_call50("ls_call50"));
++
++//DATE system call:
++ struct rtcdate *mydate=malloc(sizeof(struct rtcdate));
++ date(mydate);
++ printf(1,"\nTesting SYS_DATE SYSTEM CALL \nday=%d month=%d year=%d\n\n",(int)mydate->day,(int)mydate->month,(int)mydate->year);
++ free(mydate);
++//Testing Get pid
++st=uptime();
++getpid();
++et=uptime();
++printf(1,"\nTesting timing of getpid() took are: %d\n", (et-st));
++
++//Testing timing of fastest linear call( ls_call01) and slowest (ls_call50) according to my algorithm
++st=uptime();
++for(i=0;i<10;i++)
++{
++v=ls_call01("ls_call01");
++et=et+v;
++et=et-v;
++et=uptime();
++ret[i]=et-st;
++}
++printf(1,"\nNo of ticks for of ls_call01 is 0.%d\n",ret[i]);
++st=uptime();
++for(i=0;i<1000;i++)
++{
++v=ls_call50("ls_call50");
++et=et+v;
++et=et-v;
++et=uptime();
++ret[i]=et-st;
++}
++et=uptime();
++ret[i]=(et-st)/1;
++printf(1,"\nNumber of ticks of ls_call50 is %d\n",ret[i]);
++
++//testing timing of fastest and slowest hash call (ht_call01) and slowest (ht_call29) according to my algorithm
++for(i=0;i<10;i++)
++{
++v=ht_call01("ht_call01");
++et=et+v;
++et=et-v;
++et=uptime();
++ret[i]=et-st;
++}
++printf(1,"\nNo of Nano SECS for of ht_call01 is 0.%d\n",ret[i]);
++st=uptime();
++for(i=0;i<2000;i++)
++{
++v=ht_call29("ht_call29");
++et=et+v;
++et=et-v;
++et=uptime();
++ret[i]=et-st;
++}
++et=uptime();
++ret[i]=(et-st)/2;
++printf(1,"\nNumber of NANO SECS of ht_call29 is %d\n",ret[i]);
++
++
++//Testing bad names:
++printf(1,"\nTesting bad names\n\nBad as arguments for ls_call system call\n");
++printf(1,"\nPassing ls_call200 for ls_Call01");
++ls_call01("ls_call200");
++printf(1,"\nPassing ht_Callakafklfl for ls_Call50");
++ls_call50("ht_Callakafklfl");
++
++printf(1,"\nTesting bad names\n\nBad as arguments for ht_call system call\n");
++printf(1,"\nPassing ls_call200 for ht_Call01");
++ht_call01("ht_call200");
++printf(1,"\nPassing ht_Callakafklfl for ht_Call50");
++ht_call01("ht_Callakafklfl");
++
++//Testing bad Address
++printf(1,"\nTesting Bad Address\n");
++mydate='\0';
++date(mydate);
++
++mydate=malloc(sizeof(struct rtcdate));
++mydate=(struct rtcdate*)((int)mydate-100);
++
++date(mydate);
++
++free(mydate);
++
++ exit();
++
++}
+diff -Nur xv6-cs550-2016,1s-p1-baseline/defs.h xv6-cs550-2016,1s-p2-working/defs.h
+--- xv6-cs550-2016,1s-p1-baseline/defs.h	2016-02-11 21:48:16.000000000 -0500
++++ xv6-cs550-2016,1s-p2-working/defs.h	2016-03-11 03:18:44.386695000 -0500
+@@ -147,6 +147,9 @@
+ int             fetchint(uint, int*);
+ int             fetchstr(uint, char**);
+ void            syscall(void);
++void		my_date(struct rtcdate*);
++int		linear(char*);
++int		hash(char*);
+ 
+ // timer.c
+ void            timerinit(void);
+diff -Nur xv6-cs550-2016,1s-p1-baseline/defs.h~ xv6-cs550-2016,1s-p2-working/defs.h~
+--- xv6-cs550-2016,1s-p1-baseline/defs.h~	1969-12-31 19:00:00.000000000 -0500
++++ xv6-cs550-2016,1s-p2-working/defs.h~	2016-03-11 02:49:06.838738000 -0500
+@@ -0,0 +1,184 @@
++struct buf;
++struct context;
++struct file;
++struct inode;
++struct pipe;
++struct proc;
++struct rtcdate;
++struct spinlock;
++struct stat;
++struct superblock;
++
++// bio.c
++void            binit(void);
++struct buf*     bread(uint, uint);
++void            brelse(struct buf*);
++void            bwrite(struct buf*);
++
++// console.c
++void            consoleinit(void);
++void            cprintf(char*, ...);
++void            consoleintr(int(*)(void));
++void            panic(char*) __attribute__((noreturn));
++
++// exec.c
++int             exec(char*, char**);
++
++// file.c
++struct file*    filealloc(void);
++void            fileclose(struct file*);
++struct file*    filedup(struct file*);
++void            fileinit(void);
++int             fileread(struct file*, char*, int n);
++int             filestat(struct file*, struct stat*);
++int             filewrite(struct file*, char*, int n);
++
++// fs.c
++void            readsb(int dev, struct superblock *sb);
++int             dirlink(struct inode*, char*, uint);
++struct inode*   dirlookup(struct inode*, char*, uint*);
++struct inode*   ialloc(uint, short);
++struct inode*   idup(struct inode*);
++void            iinit(int dev);
++void            ilock(struct inode*);
++void            iput(struct inode*);
++void            iunlock(struct inode*);
++void            iunlockput(struct inode*);
++void            iupdate(struct inode*);
++int             namecmp(const char*, const char*);
++struct inode*   namei(char*);
++struct inode*   nameiparent(char*, char*);
++int             readi(struct inode*, char*, uint, uint);
++void            stati(struct inode*, struct stat*);
++int             writei(struct inode*, char*, uint, uint);
++
++// ide.c
++void            ideinit(void);
++void            ideintr(void);
++void            iderw(struct buf*);
++
++// ioapic.c
++void            ioapicenable(int irq, int cpu);
++extern uchar    ioapicid;
++void            ioapicinit(void);
++
++// kalloc.c
++char*           kalloc(void);
++void            kfree(char*);
++void            kinit1(void*, void*);
++void            kinit2(void*, void*);
++
++// kbd.c
++void            kbdintr(void);
++
++// lapic.c
++void            cmostime(struct rtcdate *r);
++int             cpunum(void);
++extern volatile uint*    lapic;
++void            lapiceoi(void);
++void            lapicinit(void);
++void            lapicstartap(uchar, uint);
++void            microdelay(int);
++
++// log.c
++void            initlog(int dev);
++void            log_write(struct buf*);
++void            begin_op();
++void            end_op();
++
++// mp.c
++extern int      ismp;
++int             mpbcpu(void);
++void            mpinit(void);
++void            mpstartthem(void);
++
++// picirq.c
++void            picenable(int);
++void            picinit(void);
++
++// pipe.c
++int             pipealloc(struct file**, struct file**);
++void            pipeclose(struct pipe*, int);
++int             piperead(struct pipe*, char*, int);
++int             pipewrite(struct pipe*, char*, int);
++
++//PAGEBREAK: 16
++// proc.c
++struct proc*    copyproc(struct proc*);
++void            exit(void);
++int             fork(void);
++int             growproc(int);
++int             kill(int);
++void            pinit(void);
++void            procdump(void);
++void            scheduler(void) __attribute__((noreturn));
++void            sched(void);
++void            sleep(void*, struct spinlock*);
++void            userinit(void);
++int             wait(void);
++void            wakeup(void*);
++void            yield(void);
++
++// swtch.S
++void            swtch(struct context**, struct context*);
++
++// spinlock.c
++void            acquire(struct spinlock*);
++void            getcallerpcs(void*, uint*);
++int             holding(struct spinlock*);
++void            initlock(struct spinlock*, char*);
++void            release(struct spinlock*);
++void            pushcli(void);
++void            popcli(void);
++
++// string.c
++int             memcmp(const void*, const void*, uint);
++void*           memmove(void*, const void*, uint);
++void*           memset(void*, int, uint);
++char*           safestrcpy(char*, const char*, int);
++int             strlen(const char*);
++int             strncmp(const char*, const char*, uint);
++char*           strncpy(char*, const char*, int);
++
++// syscall.c
++int             argint(int, int*);
++int             argptr(int, char**, int);
++int             argstr(int, char**);
++int             fetchint(uint, int*);
++int             fetchstr(uint, char**);
++void            syscall(void);
++void		my_date(struct rtcdate*);
++
++// timer.c
++void            timerinit(void);
++
++// trap.c
++void            idtinit(void);
++extern uint     ticks;
++void            tvinit(void);
++extern struct spinlock tickslock;
++
++// uart.c
++void            uartinit(void);
++void            uartintr(void);
++void            uartputc(int);
++
++// vm.c
++void            seginit(void);
++void            kvmalloc(void);
++void            vmenable(void);
++pde_t*          setupkvm(void);
++char*           uva2ka(pde_t*, char*);
++int             allocuvm(pde_t*, uint, uint);
++int             deallocuvm(pde_t*, uint, uint);
++void            freevm(pde_t*);
++void            inituvm(pde_t*, char*, uint);
++int             loaduvm(pde_t*, char*, struct inode*, uint, uint);
++pde_t*          copyuvm(pde_t*, uint);
++void            switchuvm(struct proc*);
++void            switchkvm(void);
++int             copyout(pde_t*, uint, void*, uint);
++void            clearpteu(pde_t *pgdir, char *uva);
++
++// number of elements in fixed-size array
++#define NELEM(x) (sizeof(x)/sizeof((x)[0]))
+diff -Nur xv6-cs550-2016,1s-p1-baseline/Makefile xv6-cs550-2016,1s-p2-working/Makefile
+--- xv6-cs550-2016,1s-p1-baseline/Makefile	2016-02-14 16:56:28.000000000 -0500
++++ xv6-cs550-2016,1s-p2-working/Makefile	2016-03-11 02:52:38.206733000 -0500
+@@ -177,6 +177,7 @@
+ 	_usertests\
+ 	_wc\
+ 	_zombie\
++	_cs550_user\
+ 
+ fs.img: mkfs README $(UPROGS)
+ 	./mkfs fs.img README $(UPROGS)
+diff -Nur xv6-cs550-2016,1s-p1-baseline/Makefile~ xv6-cs550-2016,1s-p2-working/Makefile~
+--- xv6-cs550-2016,1s-p1-baseline/Makefile~	1969-12-31 19:00:00.000000000 -0500
++++ xv6-cs550-2016,1s-p2-working/Makefile~	2016-03-11 01:58:10.242812000 -0500
+@@ -0,0 +1,282 @@
++OBJS = \
++	bio.o\
++	console.o\
++	exec.o\
++	file.o\
++	fs.o\
++	ide.o\
++	ioapic.o\
++	kalloc.o\
++	kbd.o\
++	lapic.o\
++	log.o\
++	main.o\
++	mp.o\
++	picirq.o\
++	pipe.o\
++	proc.o\
++	spinlock.o\
++	string.o\
++	swtch.o\
++	syscall.o\
++	sysfile.o\
++	sysproc.o\
++	timer.o\
++	trapasm.o\
++	trap.o\
++	uart.o\
++	vectors.o\
++	vm.o\
++
++# Cross-compiling (e.g., on Mac OS X)
++# TOOLPREFIX = i386-jos-elf
++
++# Using native tools (e.g., on X86 Linux)
++#TOOLPREFIX = 
++
++# Try to infer the correct TOOLPREFIX if not set
++ifndef TOOLPREFIX
++TOOLPREFIX := $(shell if i386-jos-elf-objdump -i 2>&1 | grep '^elf32-i386$$' >/dev/null 2>&1; \
++	then echo 'i386-jos-elf-'; \
++	elif objdump -i 2>&1 | grep 'elf32-i386' >/dev/null 2>&1; \
++	then echo ''; \
++	else echo "***" 1>&2; \
++	echo "*** Error: Couldn't find an i386-*-elf version of GCC/binutils." 1>&2; \
++	echo "*** Is the directory with i386-jos-elf-gcc in your PATH?" 1>&2; \
++	echo "*** If your i386-*-elf toolchain is installed with a command" 1>&2; \
++	echo "*** prefix other than 'i386-jos-elf-', set your TOOLPREFIX" 1>&2; \
++	echo "*** environment variable to that prefix and run 'make' again." 1>&2; \
++	echo "*** To turn off this error, run 'gmake TOOLPREFIX= ...'." 1>&2; \
++	echo "***" 1>&2; exit 1; fi)
++endif
++
++# If the makefile can't find QEMU, specify its path here
++# QEMU = qemu-system-i386
++
++# Try to infer the correct QEMU
++ifndef QEMU
++QEMU = $(shell if which qemu > /dev/null; \
++	then echo qemu; exit; \
++	elif which qemu-system-i386 > /dev/null; \
++	then echo qemu-system-i386; exit; \
++	else \
++	qemu=/Applications/Q.app/Contents/MacOS/i386-softmmu.app/Contents/MacOS/i386-softmmu; \
++	if test -x $$qemu; then echo $$qemu; exit; fi; fi; \
++	echo "***" 1>&2; \
++	echo "*** Error: Couldn't find a working QEMU executable." 1>&2; \
++	echo "*** Is the directory containing the qemu binary in your PATH" 1>&2; \
++	echo "*** or have you tried setting the QEMU variable in Makefile?" 1>&2; \
++	echo "***" 1>&2; exit 1)
++endif
++
++CC = $(TOOLPREFIX)gcc
++AS = $(TOOLPREFIX)gas
++LD = $(TOOLPREFIX)ld
++OBJCOPY = $(TOOLPREFIX)objcopy
++OBJDUMP = $(TOOLPREFIX)objdump
++#CFLAGS = -fno-pic -static -fno-builtin -fno-strict-aliasing -O2 -Wall -MD -ggdb -m32 -Werror -fno-omit-frame-pointer
++CFLAGS = -fno-pic -static -fno-builtin -fno-strict-aliasing -fvar-tracking -fvar-tracking-assignments -O0 -g -Wall -MD -gdwarf-2 -m32 -Werror -fno-omit-frame-pointer
++CFLAGS += $(shell $(CC) -fno-stack-protector -E -x c /dev/null >/dev/null 2>&1 && echo -fno-stack-protector)
++ASFLAGS = -m32 -gdwarf-2 -Wa,-divide
++# FreeBSD ld wants ``elf_i386_fbsd''
++LDFLAGS += -m $(shell $(LD) -V | grep elf_i386 2>/dev/null)
++
++xv6.img: bootblock kernel fs.img
++	dd if=/dev/zero of=xv6.img count=10000
++	dd if=bootblock of=xv6.img conv=notrunc
++	dd if=kernel of=xv6.img seek=1 conv=notrunc
++
++xv6memfs.img: bootblock kernelmemfs
++	dd if=/dev/zero of=xv6memfs.img count=10000
++	dd if=bootblock of=xv6memfs.img conv=notrunc
++	dd if=kernelmemfs of=xv6memfs.img seek=1 conv=notrunc
++
++bootblock: bootasm.S bootmain.c
++	$(CC) $(CFLAGS) -fno-pic -O -nostdinc -I. -c bootmain.c
++	$(CC) $(CFLAGS) -fno-pic -nostdinc -I. -c bootasm.S
++	$(LD) $(LDFLAGS) -N -e start -Ttext 0x7C00 -o bootblock.o bootasm.o bootmain.o
++	$(OBJDUMP) -S bootblock.o > bootblock.asm
++	$(OBJCOPY) -S -O binary -j .text bootblock.o bootblock
++	./sign.pl bootblock
++
++entryother: entryother.S
++	$(CC) $(CFLAGS) -fno-pic -nostdinc -I. -c entryother.S
++	$(LD) $(LDFLAGS) -N -e start -Ttext 0x7000 -o bootblockother.o entryother.o
++	$(OBJCOPY) -S -O binary -j .text bootblockother.o entryother
++	$(OBJDUMP) -S bootblockother.o > entryother.asm
++
++initcode: initcode.S
++	$(CC) $(CFLAGS) -nostdinc -I. -c initcode.S
++	$(LD) $(LDFLAGS) -N -e start -Ttext 0 -o initcode.out initcode.o
++	$(OBJCOPY) -S -O binary initcode.out initcode
++	$(OBJDUMP) -S initcode.o > initcode.asm
++
++kernel: $(OBJS) entry.o entryother initcode kernel.ld
++	$(LD) $(LDFLAGS) -T kernel.ld -o kernel entry.o $(OBJS) -b binary initcode entryother
++	$(OBJDUMP) -S kernel > kernel.asm
++	$(OBJDUMP) -t kernel | sed '1,/SYMBOL TABLE/d; s/ .* / /; /^$$/d' > kernel.sym
++
++# kernelmemfs is a copy of kernel that maintains the
++# disk image in memory instead of writing to a disk.
++# This is not so useful for testing persistent storage or
++# exploring disk buffering implementations, but it is
++# great for testing the kernel on real hardware without
++# needing a scratch disk.
++MEMFSOBJS = $(filter-out ide.o,$(OBJS)) memide.o
++kernelmemfs: $(MEMFSOBJS) entry.o entryother initcode kernel.ld fs.img
++	$(LD) $(LDFLAGS) -T kernel.ld -o kernelmemfs entry.o  $(MEMFSOBJS) -b binary initcode entryother fs.img
++	$(OBJDUMP) -S kernelmemfs > kernelmemfs.asm
++	$(OBJDUMP) -t kernelmemfs | sed '1,/SYMBOL TABLE/d; s/ .* / /; /^$$/d' > kernelmemfs.sym
++
++tags: $(OBJS) entryother.S _init
++	etags *.S *.c
++
++vectors.S: vectors.pl
++	perl vectors.pl > vectors.S
++
++ULIB = ulib.o usys.o printf.o umalloc.o
++
++# Override built-in so that we also get the assembly language.
++%.o: %.c
++	$(COMPILE.c) $(OUTPUT_OPTION) $<
++	$(COMPILE.c) -S $<
++
++_%: %.o $(ULIB)
++	$(LD) $(LDFLAGS) -N -e main -Ttext 0 -o $@ $^
++	$(OBJDUMP) -S $@ > $*.asm
++	$(OBJDUMP) -t $@ | sed '1,/SYMBOL TABLE/d; s/ .* / /; /^$$/d' > $*.sym
++
++_forktest: forktest.o $(ULIB)
++	# forktest has less library code linked in - needs to be small
++	# in order to be able to max out the proc table.
++	$(LD) $(LDFLAGS) -N -e main -Ttext 0 -o _forktest forktest.o ulib.o usys.o
++	$(OBJDUMP) -S _forktest > forktest.asm
++
++mkfs: mkfs.c fs.h
++	gcc -Werror -Wall -o mkfs mkfs.c
++
++# Prevent deletion of intermediate files, e.g. cat.o, after first build, so
++# that disk image changes after first build are persistent until clean.  More
++# details:
++# http://www.gnu.org/software/make/manual/html_node/Chained-Rules.html
++.PRECIOUS: %.o
++
++UPROGS=\
++	_cat\
++	_echo\
++	_forktest\
++	_grep\
++	_init\
++	_kill\
++	_ln\
++	_ls\
++	_mkdir\
++	_rm\
++	_sh\
++	_stressfs\
++	_usertests\
++	_wc\
++	_zombie\
++
++fs.img: mkfs README $(UPROGS)
++	./mkfs fs.img README $(UPROGS)
++
++-include *.d
++
++clean: 
++	rm -f *.tex *.dvi *.idx *.aux *.log *.ind *.ilg \
++	*.o *.d *.s *.asm *.sym vectors.S bootblock entryother \
++	initcode initcode.out kernel xv6.img fs.img kernelmemfs mkfs \
++	.gdbinit \
++	$(UPROGS)
++
++# make a printout
++FILES = $(shell grep -v '^\#' runoff.list)
++PRINT = runoff.list runoff.spec README toc.hdr toc.ftr $(FILES)
++
++xv6.pdf: $(PRINT)
++	./runoff
++	ls -l xv6.pdf
++
++print: xv6.pdf
++
++# run in emulators
++
++bochs : fs.img xv6.img
++	if [ ! -e .bochsrc ]; then ln -s dot-bochsrc .bochsrc; fi
++	bochs -q
++
++# try to generate a unique GDB port
++GDBPORT = $(shell expr `id -u` % 5000 + 25000)
++# QEMU's gdb stub command line changed in 0.11
++QEMUGDB = $(shell if $(QEMU) -help | grep -q '^-gdb'; \
++	then echo "-gdb tcp::$(GDBPORT)"; \
++	else echo "-s -p $(GDBPORT)"; fi)
++ifndef CPUS
++CPUS := 2
++endif
++QEMUOPTS = -hdb fs.img xv6.img -smp $(CPUS) -m 512 $(QEMUEXTRA)
++
++qemu: fs.img xv6.img
++	$(QEMU) -serial mon:stdio $(QEMUOPTS)
++
++qemu-memfs: xv6memfs.img
++	$(QEMU) xv6memfs.img -smp $(CPUS) -m 256
++
++qemu-nox: fs.img xv6.img
++	$(QEMU) -nographic $(QEMUOPTS)
++
++.gdbinit: .gdbinit.tmpl
++	sed "s/localhost:1234/localhost:$(GDBPORT)/" < $^ > $@
++
++qemu-gdb: fs.img xv6.img .gdbinit
++	@echo "*** Now run 'gdb'." 1>&2
++	$(QEMU) -serial mon:stdio $(QEMUOPTS) -S $(QEMUGDB)
++
++qemu-nox-gdb: fs.img xv6.img .gdbinit
++	@echo "*** Now run 'gdb'." 1>&2
++	$(QEMU) -nographic $(QEMUOPTS) -S $(QEMUGDB)
++
++# CUT HERE
++# prepare dist for students
++# after running make dist, probably want to
++# rename it to rev0 or rev1 or so on and then
++# check in that version.
++
++EXTRA=\
++	mkfs.c ulib.c user.h cat.c echo.c forktest.c grep.c kill.c\
++	ln.c ls.c mkdir.c rm.c stressfs.c usertests.c wc.c zombie.c\
++	printf.c umalloc.c\
++	README dot-bochsrc *.pl toc.* runoff runoff1 runoff.list\
++	.gdbinit.tmpl gdbutil\
++
++dist:
++	rm -rf dist
++	mkdir dist
++	for i in $(FILES); \
++	do \
++		grep -v PAGEBREAK $$i >dist/$$i; \
++	done
++	sed '/CUT HERE/,$$d' Makefile >dist/Makefile
++	echo >dist/runoff.spec
++	cp $(EXTRA) dist
++
++dist-test:
++	rm -rf dist
++	make dist
++	rm -rf dist-test
++	mkdir dist-test
++	cp dist/* dist-test
++	cd dist-test; $(MAKE) print
++	cd dist-test; $(MAKE) bochs || true
++	cd dist-test; $(MAKE) qemu
++
++# update this rule (change rev#) when it is time to
++# make a new revision.
++tar:
++	rm -rf /tmp/xv6
++	mkdir -p /tmp/xv6
++	cp dist/* dist/.gdbinit.tmpl /tmp/xv6
++	(cd /tmp; tar cf - xv6) | gzip >xv6-rev9.tar.gz  # the next one will be 9 (6/27/15)
++
++.PHONY: dist-test dist
+diff -Nur xv6-cs550-2016,1s-p1-baseline/proc.c xv6-cs550-2016,1s-p2-working/proc.c
+--- xv6-cs550-2016,1s-p1-baseline/proc.c	2016-02-12 12:08:50.000000000 -0500
++++ xv6-cs550-2016,1s-p2-working/proc.c	2016-03-11 02:39:55.550751000 -0500
+@@ -469,3 +469,8 @@
+     cprintf("\n");
+   }
+ }
++void
++my_date(struct rtcdate *mydate)
++{	
++  cmostime(mydate);
++}
+diff -Nur xv6-cs550-2016,1s-p1-baseline/proc.c~ xv6-cs550-2016,1s-p2-working/proc.c~
+--- xv6-cs550-2016,1s-p1-baseline/proc.c~	1969-12-31 19:00:00.000000000 -0500
++++ xv6-cs550-2016,1s-p2-working/proc.c~	2016-02-12 12:08:50.000000000 -0500
+@@ -0,0 +1,471 @@
++#include "types.h"
++#include "defs.h"
++#include "param.h"
++#include "memlayout.h"
++#include "mmu.h"
++#include "x86.h"
++#include "proc.h"
++#include "spinlock.h"
++
++struct {
++  struct spinlock lock;
++  struct proc proc[NPROC];
++} ptable;
++
++static struct proc *initproc;
++
++int nextpid = 1;
++extern void forkret(void);
++extern void trapret(void);
++
++static void wakeup1(void *chan);
++
++void
++pinit(void)
++{
++  initlock(&ptable.lock, "ptable");
++}
++
++//PAGEBREAK: 32
++// Look in the process table for an UNUSED proc.
++// If found, change state to EMBRYO and initialize
++// state required to run in the kernel.
++// Otherwise return 0.
++static struct proc*
++allocproc(void)
++{
++  struct proc *p;
++  char *sp;
++
++  acquire(&ptable.lock);
++  for(p = ptable.proc; p < &ptable.proc[NPROC]; p++)
++    if(p->state == UNUSED)
++      goto found;
++  release(&ptable.lock);
++  return 0;
++
++found:
++  p->state = EMBRYO;
++  p->pid = nextpid++;
++  release(&ptable.lock);
++
++  // Allocate kernel stack.
++  if((p->kstack = kalloc()) == 0){
++    p->state = UNUSED;
++    return 0;
++  }
++  sp = p->kstack + KSTACKSIZE;
++  
++  // Leave room for trap frame.
++  sp -= sizeof *p->tf;
++  p->tf = (struct trapframe*)sp;
++  
++  // Set up new context to start executing at forkret,
++  // which returns to trapret.
++  sp -= 4;
++  *(uint*)sp = (uint)trapret;
++
++  sp -= sizeof *p->context;
++  p->context = (struct context*)sp;
++  memset(p->context, 0, sizeof *p->context);
++  p->context->eip = (uint)forkret;
++
++  return p;
++}
++
++//PAGEBREAK: 32
++// Set up first user process.
++void
++userinit(void)
++{
++  struct proc *p;
++  extern char _binary_initcode_start[], _binary_initcode_size[];
++  
++  p = allocproc();
++  initproc = p;
++  if((p->pgdir = setupkvm()) == 0)
++    panic("userinit: out of memory?");
++  inituvm(p->pgdir, _binary_initcode_start, (int)_binary_initcode_size);
++  p->sz = PGSIZE;
++  memset(p->tf, 0, sizeof(*p->tf));
++  p->tf->cs = (SEG_UCODE << 3) | DPL_USER;
++  p->tf->ds = (SEG_UDATA << 3) | DPL_USER;
++  p->tf->es = p->tf->ds;
++  p->tf->ss = p->tf->ds;
++  p->tf->eflags = FL_IF;
++  p->tf->esp = PGSIZE;
++  p->tf->eip = 0;  // beginning of initcode.S
++
++  safestrcpy(p->name, "initcode", sizeof(p->name));
++  p->cwd = namei("/");
++
++  p->state = RUNNABLE;
++}
++
++// Grow current process's memory by n bytes.
++// Return 0 on success, -1 on failure.
++int
++growproc(int n)
++{
++  uint sz;
++  
++  sz = proc->sz;
++  if(n > 0){
++    if((sz = allocuvm(proc->pgdir, sz, sz + n)) == 0)
++      return -1;
++  } else if(n < 0){
++    if((sz = deallocuvm(proc->pgdir, sz, sz + n)) == 0)
++      return -1;
++  }
++  proc->sz = sz;
++  switchuvm(proc);
++  return 0;
++}
++
++// Create a new process copying p as the parent.
++// Sets up stack to return as if from system call.
++// Caller must set state of returned proc to RUNNABLE.
++int
++fork(void)
++{
++  int i, pid;
++  struct proc *np;
++
++  // Allocate process.
++  if((np = allocproc()) == 0)
++    return -1;
++
++  // Copy process state from p.
++  if((np->pgdir = copyuvm(proc->pgdir, proc->sz)) == 0){
++    kfree(np->kstack);
++    np->kstack = 0;
++    np->state = UNUSED;
++    return -1;
++  }
++  np->sz = proc->sz;
++  np->parent = proc;
++  *np->tf = *proc->tf;
++
++  // Clear %eax so that fork returns 0 in the child.
++  np->tf->eax = 0;
++
++  for(i = 0; i < NOFILE; i++)
++    if(proc->ofile[i])
++      np->ofile[i] = filedup(proc->ofile[i]);
++  np->cwd = idup(proc->cwd);
++
++  safestrcpy(np->name, proc->name, sizeof(proc->name));
++ 
++  pid = np->pid;
++
++  // lock to force the compiler to emit the np->state write last.
++  acquire(&ptable.lock);
++  np->state = RUNNABLE;
++  release(&ptable.lock);
++  
++  return pid;
++}
++
++// Exit the current process.  Does not return.
++// An exited process remains in the zombie state
++// until its parent calls wait() to find out it exited.
++void
++exit(void)
++{
++  struct proc *p;
++  int fd;
++
++  if(proc == initproc)
++    panic("init exiting");
++
++  // Close all open files.
++  for(fd = 0; fd < NOFILE; fd++){
++    if(proc->ofile[fd]){
++      fileclose(proc->ofile[fd]);
++      proc->ofile[fd] = 0;
++    }
++  }
++
++  begin_op();
++  iput(proc->cwd);
++  end_op();
++  proc->cwd = 0;
++
++  acquire(&ptable.lock);
++
++  // Parent might be sleeping in wait().
++  wakeup1(proc->parent);
++
++  // Pass abandoned children to init.
++  for(p = ptable.proc; p < &ptable.proc[NPROC]; p++){
++    if(p->parent == proc){
++      p->parent = initproc;
++      if(p->state == ZOMBIE)
++        wakeup1(initproc);
++    }
++  }
++
++  // Jump into the scheduler, never to return.
++  proc->state = ZOMBIE;
++  sched();
++  panic("zombie exit");
++}
++
++// Wait for a child process to exit and return its pid.
++// Return -1 if this process has no children.
++int
++wait(void)
++{
++  struct proc *p;
++  int havekids, pid;
++
++  acquire(&ptable.lock);
++  for(;;){
++    // Scan through table looking for zombie children.
++    havekids = 0;
++    for(p = ptable.proc; p < &ptable.proc[NPROC]; p++){
++      if(p->parent != proc)
++        continue;
++      havekids = 1;
++      if(p->state == ZOMBIE){
++        // Found one.
++        pid = p->pid;
++        kfree(p->kstack);
++        p->kstack = 0;
++        freevm(p->pgdir);
++        p->state = UNUSED;
++        p->pid = 0;
++        p->parent = 0;
++        p->name[0] = 0;
++        p->killed = 0;
++        release(&ptable.lock);
++        return pid;
++      }
++    }
++
++    // No point waiting if we don't have any children.
++    if(!havekids || proc->killed){
++      release(&ptable.lock);
++      return -1;
++    }
++
++    // Wait for children to exit.  (See wakeup1 call in proc_exit.)
++    sleep(proc, &ptable.lock);  //DOC: wait-sleep
++  }
++}
++
++//PAGEBREAK: 42
++// Per-CPU process scheduler.
++// Each CPU calls scheduler() after setting itself up.
++// Scheduler never returns.  It loops, doing:
++//  - choose a process to run
++//  - swtch to start running that process
++//  - eventually that process transfers control
++//      via swtch back to the scheduler.
++void
++scheduler(void)
++{
++  struct proc *p;
++  int ran;
++
++  for(;;){
++    // Enable interrupts on this processor.
++    sti();
++
++    // Loop over process table looking for process to run.
++    acquire(&ptable.lock);
++    for(ran = 0, p = ptable.proc; p < &ptable.proc[NPROC]; p++){
++      if(p->state != RUNNABLE)
++        continue;
++
++      // Switch to chosen process.  It is the process's job
++      // to release ptable.lock and then reacquire it
++      // before jumping back to us.
++      ran = 1;
++      proc = p;
++      switchuvm(p);
++      p->state = RUNNING;
++      swtch(&cpu->scheduler, proc->context);
++      switchkvm();
++
++      // Process is done running for now.
++      // It should have changed its p->state before coming back.
++      proc = 0;
++    }
++    release(&ptable.lock);
++
++    if (ran == 0) {
++      halt();
++    }
++  }
++}
++
++// Enter scheduler.  Must hold only ptable.lock
++// and have changed proc->state.
++void
++sched(void)
++{
++  int intena;
++
++  if(!holding(&ptable.lock))
++    panic("sched ptable.lock");
++  if(cpu->ncli != 1)
++    panic("sched locks");
++  if(proc->state == RUNNING)
++    panic("sched running");
++  if(readeflags()&FL_IF)
++    panic("sched interruptible");
++  intena = cpu->intena;
++  swtch(&proc->context, cpu->scheduler);
++  cpu->intena = intena;
++}
++
++// Give up the CPU for one scheduling round.
++void
++yield(void)
++{
++  acquire(&ptable.lock);  //DOC: yieldlock
++  proc->state = RUNNABLE;
++  sched();
++  release(&ptable.lock);
++}
++
++// A fork child's very first scheduling by scheduler()
++// will swtch here.  "Return" to user space.
++void
++forkret(void)
++{
++  static int first = 1;
++  // Still holding ptable.lock from scheduler.
++  release(&ptable.lock);
++
++  if (first) {
++    // Some initialization functions must be run in the context
++    // of a regular process (e.g., they call sleep), and thus cannot 
++    // be run from main().
++    first = 0;
++    iinit(ROOTDEV);
++    initlog(ROOTDEV);
++  }
++  
++  // Return to "caller", actually trapret (see allocproc).
++}
++
++// Atomically release lock and sleep on chan.
++// Reacquires lock when awakened.
++void
++sleep(void *chan, struct spinlock *lk)
++{
++  if(proc == 0)
++    panic("sleep");
++
++  if(lk == 0)
++    panic("sleep without lk");
++
++  // Must acquire ptable.lock in order to
++  // change p->state and then call sched.
++  // Once we hold ptable.lock, we can be
++  // guaranteed that we won't miss any wakeup
++  // (wakeup runs with ptable.lock locked),
++  // so it's okay to release lk.
++  if(lk != &ptable.lock){  //DOC: sleeplock0
++    acquire(&ptable.lock);  //DOC: sleeplock1
++    release(lk);
++  }
++
++  // Go to sleep.
++  proc->chan = chan;
++  proc->state = SLEEPING;
++  sched();
++
++  // Tidy up.
++  proc->chan = 0;
++
++  // Reacquire original lock.
++  if(lk != &ptable.lock){  //DOC: sleeplock2
++    release(&ptable.lock);
++    acquire(lk);
++  }
++}
++
++//PAGEBREAK!
++// Wake up all processes sleeping on chan.
++// The ptable lock must be held.
++static void
++wakeup1(void *chan)
++{
++  struct proc *p;
++
++  for(p = ptable.proc; p < &ptable.proc[NPROC]; p++)
++    if(p->state == SLEEPING && p->chan == chan)
++      p->state = RUNNABLE;
++}
++
++// Wake up all processes sleeping on chan.
++void
++wakeup(void *chan)
++{
++  acquire(&ptable.lock);
++  wakeup1(chan);
++  release(&ptable.lock);
++}
++
++// Kill the process with the given pid.
++// Process won't exit until it returns
++// to user space (see trap in trap.c).
++int
++kill(int pid)
++{
++  struct proc *p;
++
++  acquire(&ptable.lock);
++  for(p = ptable.proc; p < &ptable.proc[NPROC]; p++){
++    if(p->pid == pid){
++      p->killed = 1;
++      // Wake process from sleep if necessary.
++      if(p->state == SLEEPING)
++        p->state = RUNNABLE;
++      release(&ptable.lock);
++      return 0;
++    }
++  }
++  release(&ptable.lock);
++  return -1;
++}
++
++//PAGEBREAK: 36
++// Print a process listing to console.  For debugging.
++// Runs when user types ^P on console.
++// No lock to avoid wedging a stuck machine further.
++void
++procdump(void)
++{
++  static char *states[] = {
++  [UNUSED]    "unused",
++  [EMBRYO]    "embryo",
++  [SLEEPING]  "sleep ",
++  [RUNNABLE]  "runble",
++  [RUNNING]   "run   ",
++  [ZOMBIE]    "zombie"
++  };
++  int i;
++  struct proc *p;
++  char *state;
++  uint pc[10];
++  
++  for(p = ptable.proc; p < &ptable.proc[NPROC]; p++){
++    if(p->state == UNUSED)
++      continue;
++    if(p->state >= 0 && p->state < NELEM(states) && states[p->state])
++      state = states[p->state];
++    else
++      state = "???";
++    cprintf("%d %s %s", p->pid, state, p->name);
++    if(p->state == SLEEPING){
++      getcallerpcs((uint*)p->context->ebp+2, pc);
++      for(i=0; i<10 && pc[i] != 0; i++)
++        cprintf(" %p", pc[i]);
++    }
++    cprintf("\n");
++  }
++}
+diff -Nur xv6-cs550-2016,1s-p1-baseline/README-B00574036 xv6-cs550-2016,1s-p2-working/README-B00574036
+--- xv6-cs550-2016,1s-p1-baseline/README-B00574036	1969-12-31 19:00:00.000000000 -0500
++++ xv6-cs550-2016,1s-p2-working/README-B00574036	2016-03-11 20:48:14.963628000 -0500
+@@ -0,0 +1,2 @@
++Name: sumanth venkata naga satya chadalla
++email: schadal1@binghamton.edu
+diff -Nur xv6-cs550-2016,1s-p1-baseline/syscall.c xv6-cs550-2016,1s-p2-working/syscall.c
+--- xv6-cs550-2016,1s-p1-baseline/syscall.c	2016-02-11 21:48:16.000000000 -0500
++++ xv6-cs550-2016,1s-p2-working/syscall.c	2016-03-11 03:53:15.738645000 -0500
+@@ -98,6 +98,7 @@
+ extern int sys_wait(void);
+ extern int sys_write(void);
+ extern int sys_uptime(void);
++extern int sys_date(void);
+ 
+ static int (*syscalls[])(void) = {
+ [SYS_fork]    sys_fork,
+@@ -121,6 +122,7 @@
+ [SYS_link]    sys_link,
+ [SYS_mkdir]   sys_mkdir,
+ [SYS_close]   sys_close,
++[SYS_date]    sys_date,
+ };
+ 
+ void
+diff -Nur xv6-cs550-2016,1s-p1-baseline/syscall.c~ xv6-cs550-2016,1s-p2-working/syscall.c~
+--- xv6-cs550-2016,1s-p1-baseline/syscall.c~	1969-12-31 19:00:00.000000000 -0500
++++ xv6-cs550-2016,1s-p2-working/syscall.c~	2016-03-11 03:49:27.310650000 -0500
+@@ -0,0 +1,141 @@
++#include "types.h"
++#include "defs.h"
++#include "param.h"
++#include "memlayout.h"
++#include "mmu.h"
++#include "proc.h"
++#include "x86.h"
++#include "syscall.h"
++
++// User code makes a system call with INT T_SYSCALL.
++// System call number in %eax.
++// Arguments on the stack, from the user call to the C
++// library system call function. The saved user %esp points
++// to a saved program counter, and then the first argument.
++
++// Fetch the int at addr from the current process.
++int
++fetchint(uint addr, int *ip)
++{
++  if(addr >= proc->sz || addr+4 > proc->sz)
++    return -1;
++  *ip = *(int*)(addr);
++  return 0;
++}
++
++// Fetch the nul-terminated string at addr from the current process.
++// Doesn't actually copy the string - just sets *pp to point at it.
++// Returns length of string, not including nul.
++int
++fetchstr(uint addr, char **pp)
++{
++  char *s, *ep;
++
++  if(addr >= proc->sz)
++    return -1;
++  *pp = (char*)addr;
++  ep = (char*)proc->sz;
++  for(s = *pp; s < ep; s++)
++    if(*s == 0)
++      return s - *pp;
++  return -1;
++}
++
++// Fetch the nth 32-bit system call argument.
++int
++argint(int n, int *ip)
++{
++  return fetchint(proc->tf->esp + 4 + 4*n, ip);
++}
++
++// Fetch the nth word-sized system call argument as a pointer
++// to a block of memory of size n bytes.  Check that the pointer
++// lies within the process address space.
++int
++argptr(int n, char **pp, int size)
++{
++  int i;
++  
++  if(argint(n, &i) < 0)
++    return -1;
++  if((uint)i >= proc->sz || (uint)i+size > proc->sz)
++    return -1;
++  *pp = (char*)i;
++  return 0;
++}
++
++// Fetch the nth word-sized system call argument as a string pointer.
++// Check that the pointer is valid and the string is nul-terminated.
++// (There is no shared writable memory, so the string can't change
++// between this check and being used by the kernel.)
++int
++argstr(int n, char **pp)
++{
++  int addr;
++  if(argint(n, &addr) < 0)
++    return -1;
++  return fetchstr(addr, pp);
++}
++
++extern int sys_chdir(void);
++extern int sys_close(void);
++extern int sys_dup(void);
++extern int sys_exec(void);
++extern int sys_exit(void);
++extern int sys_fork(void);
++extern int sys_fstat(void);
++extern int sys_getpid(void);
++extern int sys_kill(void);
++extern int sys_link(void);
++extern int sys_mkdir(void);
++extern int sys_mknod(void);
++extern int sys_open(void);
++extern int sys_pipe(void);
++extern int sys_read(void);
++extern int sys_sbrk(void);
++extern int sys_sleep(void);
++extern int sys_unlink(void);
++extern int sys_wait(void);
++extern int sys_write(void);
++extern int sys_uptime(void);
++extern int sys_date(void);
++
++static int (*syscalls[])(void) = {
++[SYS_fork]    sys_fork,
++[SYS_exit]    sys_exit,
++[SYS_wait]    sys_wait,
++[SYS_pipe]    sys_pipe,
++[SYS_read]    sys_read,
++[SYS_kill]    sys_kill,
++[SYS_exec]    sys_exec,
++[SYS_fstat]   sys_fstat,
++[SYS_chdir]   sys_chdir,
++[SYS_dup]     sys_dup,
++[SYS_getpid]  sys_getpid,
++[SYS_sbrk]    sys_sbrk,
++[SYS_sleep]   sys_sleep,
++[SYS_uptime]  sys_uptime,
++[SYS_open]    sys_open,
++[SYS_write]   sys_write,
++[SYS_mknod]   sys_mknod,
++[SYS_unlink]  sys_unlink,
++[SYS_link]    sys_link,
++[SYS_mkdir]   sys_mkdir,
++[SYS_close]   sys_close,
++[SYS_date]    sys_date,
++};
++
++void
++syscall(void)
++{
++  int num;
++
++  num = proc->tf->eax;
++  if(num > 0 && num < NELEM(syscalls) && syscalls[num]) {
++    proc->tf->eax = syscalls[num]();
++  } else {
++    cprintf("%d %s: unknown sys call here bisc%d\n",
++            proc->pid, proc->name, num);
++    proc->tf->eax = -1;
++  }
++}
+diff -Nur xv6-cs550-2016,1s-p1-baseline/syscall.h xv6-cs550-2016,1s-p2-working/syscall.h
+--- xv6-cs550-2016,1s-p1-baseline/syscall.h	2016-02-11 21:48:16.000000000 -0500
++++ xv6-cs550-2016,1s-p2-working/syscall.h	2016-03-11 04:28:57.078593000 -0500
+@@ -20,3 +20,106 @@
+ #define SYS_link   19
+ #define SYS_mkdir  20
+ #define SYS_close  21
++#define SYS_date   22
++#define LS_ls_call01 23
++#define LS_ls_call02 24
++#define LS_ls_call03 25
++#define LS_ls_call04 26
++#define LS_ls_call05 27 
++#define LS_ls_call06 28
++#define LS_ls_call07 29
++#define LS_ls_call08 30
++#define LS_ls_call09 31
++#define LS_ls_call10 32
++#define LS_ls_call11 33
++#define LS_ls_call12 34
++#define LS_ls_call13 35
++#define LS_ls_call14 36
++#define LS_ls_call15 37
++#define LS_ls_call16 38
++#define LS_ls_call17 39
++#define LS_ls_call18 40
++#define LS_ls_call19 41
++#define LS_ls_call20 42
++#define LS_ls_call21 43
++#define LS_ls_call22 44
++#define LS_ls_call23 45
++#define LS_ls_call24 46
++#define LS_ls_call25 47
++#define LS_ls_call26 48
++#define LS_ls_call27 49
++#define LS_ls_call28 50
++#define LS_ls_call29 51
++#define LS_ls_call30 52
++#define LS_ls_call31 53
++#define LS_ls_call32 54
++#define LS_ls_call33 55
++#define LS_ls_call34 56
++#define LS_ls_call35 57
++#define LS_ls_call36 58
++#define LS_ls_call37 59
++#define LS_ls_call38 60
++#define LS_ls_call39 61
++#define LS_ls_call40 62
++#define LS_ls_call41 63 
++#define LS_ls_call42 64
++#define LS_ls_call43 65
++#define LS_ls_call44 66
++#define LS_ls_call45 67
++#define LS_ls_call46 68
++#define LS_ls_call47 69
++#define LS_ls_call48 70
++#define LS_ls_call49 71
++#define LS_ls_call50 72
++
++
++#define HT_ht_call01 73
++#define HT_ht_call02 74
++#define HT_ht_call03 75
++#define HT_ht_call04 76
++#define HT_ht_call05 77 
++#define HT_ht_call06 78
++#define HT_ht_call07 79
++#define HT_ht_call08 80
++#define HT_ht_call09 81
++#define HT_ht_call10 82
++#define HT_ht_call11 83
++#define HT_ht_call12 84
++#define HT_ht_call13 85
++#define HT_ht_call14 86
++#define HT_ht_call15 87
++#define HT_ht_call16 88
++#define HT_ht_call17 89
++#define HT_ht_call18 90
++#define HT_ht_call19 91
++#define HT_ht_call20 92
++#define HT_ht_call21 93
++#define HT_ht_call22 94
++#define HT_ht_call23 95
++#define HT_ht_call24 96
++#define HT_ht_call25 97
++#define HT_ht_call26 98
++#define HT_ht_call27 99
++#define HT_ht_call28 100
++#define HT_ht_call29 101
++#define HT_ht_call30 102
++#define HT_ht_call31 103
++#define HT_ht_call32 104
++#define HT_ht_call33 105
++#define HT_ht_call34 106
++#define HT_ht_call35 107
++#define HT_ht_call36 108
++#define HT_ht_call37 109
++#define HT_ht_call38 110
++#define HT_ht_call39 111
++#define HT_ht_call40 112
++#define HT_ht_call41 113 
++#define HT_ht_call42 114
++#define HT_ht_call43 115
++#define HT_ht_call44 116
++#define HT_ht_call45 117
++#define HT_ht_call46 118
++#define HT_ht_call47 119
++#define HT_ht_call48 120
++#define HT_ht_call49 121
++#define HT_ht_call50 122
+diff -Nur xv6-cs550-2016,1s-p1-baseline/syscall.h~ xv6-cs550-2016,1s-p2-working/syscall.h~
+--- xv6-cs550-2016,1s-p1-baseline/syscall.h~	1969-12-31 19:00:00.000000000 -0500
++++ xv6-cs550-2016,1s-p2-working/syscall.h~	2016-03-11 02:58:41.402724000 -0500
+@@ -0,0 +1,25 @@
++// System call numbers
++#define SYS_fork    1
++#define SYS_exit    2
++#define SYS_wait    3
++#define SYS_pipe    4
++#define SYS_read    5
++#define SYS_kill    6
++#define SYS_exec    7
++#define SYS_fstat   8
++#define SYS_chdir   9
++#define SYS_dup    10
++#define SYS_getpid 11
++#define SYS_sbrk   12
++#define SYS_sleep  13
++#define SYS_uptime 14
++#define SYS_open   15
++#define SYS_write  16
++#define SYS_mknod  17
++#define SYS_unlink 18
++#define SYS_link   19
++#define SYS_mkdir  20
++#define SYS_close  21
++#define SYS_date   22
++#define LS_ls_call01 23
++#define HT_ht_call01 73
+diff -Nur xv6-cs550-2016,1s-p1-baseline/sysproc.c xv6-cs550-2016,1s-p2-working/sysproc.c
+--- xv6-cs550-2016,1s-p1-baseline/sysproc.c	2016-02-11 21:48:16.000000000 -0500
++++ xv6-cs550-2016,1s-p2-working/sysproc.c	2016-03-11 20:16:33.291674000 -0500
+@@ -89,3 +89,30 @@
+   release(&tickslock);
+   return xticks;
+ }
++int
++arg(int n, char **pp, int size)
++{
++  int i;
++  if(argint(n, &i) < 0)
++    return -1;
++    if((uint)i == 0)
++    	cprintf("BAD Address!!\n");
++  if((uint)i >= proc->sz || (uint)i+size > proc->sz || (uint)i == 0)
++    return -1;
++  *pp = (char*)i;
++  return 0;
++}
++int
++sys_date(void)
++{
++  struct rtcdate* mdate;
++  if (arg(0, (char **) &mdate, sizeof(struct rtcdate)) < 0)
++  {
++  cprintf("\n Bad address or wrong value passed please check!\n");
++  return -1;
++  }
++
++  my_date(mdate);
++  return 0;
++  
++}
+diff -Nur xv6-cs550-2016,1s-p1-baseline/sysproc.c~ xv6-cs550-2016,1s-p2-working/sysproc.c~
+--- xv6-cs550-2016,1s-p1-baseline/sysproc.c~	1969-12-31 19:00:00.000000000 -0500
++++ xv6-cs550-2016,1s-p2-working/sysproc.c~	2016-03-11 20:10:40.335683000 -0500
+@@ -0,0 +1,118 @@
++#include "types.h"
++#include "x86.h"
++#include "defs.h"
++#include "date.h"
++#include "param.h"
++#include "memlayout.h"
++#include "mmu.h"
++#include "proc.h"
++
++int
++sys_fork(void)
++{
++  return fork();
++}
++
++int
++sys_exit(void)
++{
++  exit();
++  return 0;  // not reached
++}
++
++int
++sys_wait(void)
++{
++  return wait();
++}
++
++int
++sys_kill(void)
++{
++  int pid;
++
++  if(argint(0, &pid) < 0)
++    return -1;
++  return kill(pid);
++}
++
++int
++sys_getpid(void)
++{
++  return proc->pid;
++}
++
++int
++sys_sbrk(void)
++{
++  int addr;
++  int n;
++
++  if(argint(0, &n) < 0)
++    return -1;
++  addr = proc->sz;
++  if(growproc(n) < 0)
++    return -1;
++  return addr;
++}
++
++int
++sys_sleep(void)
++{
++  int n;
++  uint ticks0;
++  
++  if(argint(0, &n) < 0)
++    return -1;
++  acquire(&tickslock);
++  ticks0 = ticks;
++  while(ticks - ticks0 < n){
++    if(proc->killed){
++      release(&tickslock);
++      return -1;
++    }
++    sleep(&ticks, &tickslock);
++  }
++  release(&tickslock);
++  return 0;
++}
++
++// return how many clock tick interrupts have occurred
++// since start.
++int
++sys_uptime(void)
++{
++  uint xticks;
++  
++  acquire(&tickslock);
++  xticks = ticks;
++  release(&tickslock);
++  return xticks;
++}
++int
++arg(int n, char **pp, int size)
++{
++  int i;
++  if(argint(n, &i) < 0)
++    return -1;
++    if((uint)i == 0)
++    	cprintf("BAD Address!!\n");
++  if((uint)i >= proc->sz || (uint)i+size > proc->sz || (uint)i == 0)
++    return -1;
++  *pp = (char*)i;
++  return 0;
++}
++int
++sys_date(void)
++{
++  struct rtcdate* mdate;
++  if (arg(0, (char **) &mdate, sizeof(struct rtcdate)) < 0)
++  {
++  cprintf("\n Bad address or wrong value passed please check!\n");
++  return -1;
++  }
++
++  my_date(mdate);
++  return 0;
++  
++}
+diff -Nur xv6-cs550-2016,1s-p1-baseline/trap.c xv6-cs550-2016,1s-p2-working/trap.c
+--- xv6-cs550-2016,1s-p1-baseline/trap.c	2016-02-11 21:48:16.000000000 -0500
++++ xv6-cs550-2016,1s-p2-working/trap.c	2016-03-11 12:29:47.729872000 -0500
+@@ -7,6 +7,7 @@
+ #include "x86.h"
+ #include "traps.h"
+ #include "spinlock.h"
++#include "cs550_syscall.c"
+ 
+ // Interrupt descriptor table (shared by all CPUs).
+ struct gatedesc idt[256];
+@@ -21,8 +22,10 @@
+ 
+   for(i = 0; i < 256; i++)
+     SETGATE(idt[i], 0, SEG_KCODE<<3, vectors[i], 0);
+-  SETGATE(idt[T_SYSCALL], 1, SEG_KCODE<<3, vectors[T_SYSCALL], DPL_USER);
+-  
++    SETGATE(idt[T_SYSCALL], 1, SEG_KCODE<<3, vectors[T_SYSCALL], DPL_USER);
++    SETGATE(idt[L_SYSCALL], 1, SEG_KCODE<<3, vectors[L_SYSCALL], DPL_USER);
++    SETGATE(idt[H_SYSCALL], 1, SEG_KCODE<<3, vectors[H_SYSCALL], DPL_USER);
++	  
+   initlock(&tickslock, "time");
+ }
+ 
+@@ -45,7 +48,24 @@
+       exit();
+     return;
+   }
+-
++ if(tf->trapno == L_SYSCALL){
++    if(proc->killed)
++      exit();
++    proc->tf = tf;
++    cs550_syscall();
++    if(proc->killed)
++      exit();
++    return;
++  }
++ if(tf->trapno == H_SYSCALL){
++    if(proc->killed)
++      exit();
++    proc->tf = tf;
++    cs550_syscall();
++    if(proc->killed)
++      exit();
++    return;
++  }
+   switch(tf->trapno){
+   case T_IRQ0 + IRQ_TIMER:
+     if(cpu->id == 0){
+diff -Nur xv6-cs550-2016,1s-p1-baseline/trap.c~ xv6-cs550-2016,1s-p2-working/trap.c~
+--- xv6-cs550-2016,1s-p1-baseline/trap.c~	1969-12-31 19:00:00.000000000 -0500
++++ xv6-cs550-2016,1s-p2-working/trap.c~	2016-03-11 04:00:15.038635000 -0500
+@@ -0,0 +1,131 @@
++#include "types.h"
++#include "defs.h"
++#include "param.h"
++#include "memlayout.h"
++#include "mmu.h"
++#include "proc.h"
++#include "x86.h"
++#include "traps.h"
++#include "spinlock.h"
++#include "cs550_syscall.c"
++
++// Interrupt descriptor table (shared by all CPUs).
++struct gatedesc idt[256];
++extern uint vectors[];  // in vectors.S: array of 256 entry pointers
++struct spinlock tickslock;
++uint ticks;
++
++void
++tvinit(void)
++{
++  int i;
++
++  for(i = 0; i < 256; i++)
++    SETGATE(idt[i], 0, SEG_KCODE<<3, vectors[i], 0);
++  SETGATE(idt[T_SYSCALL], 1, SEG_KCODE<<3, vectors[T_SYSCALL], DPL_USER);
++SETGATE(idt[L_SYSCALL], 1, SEG_KCODE<<3, vectors[L_SYSCALL], DPL_USER);
++SETGATE(idt[H_SYSCALL], 1, SEG_KCODE<<3, vectors[H_SYSCALL], DPL_USER);
++  
++  initlock(&tickslock, "time");
++}
++
++void
++idtinit(void)
++{
++  lidt(idt, sizeof(idt));
++}
++
++//PAGEBREAK: 41
++void
++trap(struct trapframe *tf)
++{
++  if(tf->trapno == T_SYSCALL){
++    if(proc->killed)
++      exit();
++    proc->tf = tf;
++    syscall();
++    if(proc->killed)
++      exit();
++    return;
++  }
++ if(tf->trapno == L_SYSCALL){
++    if(proc->killed)
++      exit();
++    proc->tf = tf;
++    cs550_syscall();
++    if(proc->killed)
++      exit();
++    return;
++  }
++ if(tf->trapno == H_SYSCALL){
++    if(proc->killed)
++      exit();
++    proc->tf = tf;
++    cs550_syscall();
++    if(proc->killed)
++      exit();
++    return;
++  }
++  switch(tf->trapno){
++  case T_IRQ0 + IRQ_TIMER:
++    if(cpu->id == 0){
++      acquire(&tickslock);
++      ticks++;
++      wakeup(&ticks);
++      release(&tickslock);
++    }
++    lapiceoi();
++    break;
++  case T_IRQ0 + IRQ_IDE:
++    ideintr();
++    lapiceoi();
++    break;
++  case T_IRQ0 + IRQ_IDE+1:
++    // Bochs generates spurious IDE1 interrupts.
++    break;
++  case T_IRQ0 + IRQ_KBD:
++    kbdintr();
++    lapiceoi();
++    break;
++  case T_IRQ0 + IRQ_COM1:
++    uartintr();
++    lapiceoi();
++    break;
++  case T_IRQ0 + 7:
++  case T_IRQ0 + IRQ_SPURIOUS:
++    cprintf("cpu%d: spurious interrupt at %x:%x\n",
++            cpu->id, tf->cs, tf->eip);
++    lapiceoi();
++    break;
++   
++  //PAGEBREAK: 13
++  default:
++    if(proc == 0 || (tf->cs&3) == 0){
++      // In kernel, it must be our mistake.
++      cprintf("unexpected trap %d from cpu %d eip %x (cr2=0x%x)\n",
++              tf->trapno, cpu->id, tf->eip, rcr2());
++      panic("trap");
++    }
++    // In user space, assume process misbehaved.
++    cprintf("pid %d %s: trap %d err %d on cpu %d "
++            "eip 0x%x addr 0x%x--kill proc\n",
++            proc->pid, proc->name, tf->trapno, tf->err, cpu->id, tf->eip, 
++            rcr2());
++    proc->killed = 1;
++  }
++
++  // Force process exit if it has been killed and is in user space.
++  // (If it is still executing in the kernel, let it keep running 
++  // until it gets to the regular system call return.)
++  if(proc && proc->killed && (tf->cs&3) == DPL_USER)
++    exit();
++
++  // Force process to give up CPU on clock tick.
++  // If interrupts were on while locks held, would need to check nlock.
++  if(proc && proc->state == RUNNING && tf->trapno == T_IRQ0+IRQ_TIMER)
++    yield();
++
++  // Check if the process has been killed since we yielded
++  if(proc && proc->killed && (tf->cs&3) == DPL_USER)
++    exit();
++}
+diff -Nur xv6-cs550-2016,1s-p1-baseline/traps.h xv6-cs550-2016,1s-p2-working/traps.h
+--- xv6-cs550-2016,1s-p1-baseline/traps.h	2016-02-11 21:48:16.000000000 -0500
++++ xv6-cs550-2016,1s-p2-working/traps.h	2016-03-11 02:25:45.382772000 -0500
+@@ -25,6 +25,8 @@
+ // These are arbitrarily chosen, but with care not to overlap
+ // processor defined exceptions or interrupt vectors.
+ #define T_SYSCALL       64      // system call
++#define L_SYSCALL       65   
++#define H_SYSCALL       66   
+ #define T_DEFAULT      500      // catchall
+ 
+ #define T_IRQ0          32      // IRQ 0 corresponds to int T_IRQ
+diff -Nur xv6-cs550-2016,1s-p1-baseline/traps.h~ xv6-cs550-2016,1s-p2-working/traps.h~
+--- xv6-cs550-2016,1s-p1-baseline/traps.h~	1969-12-31 19:00:00.000000000 -0500
++++ xv6-cs550-2016,1s-p2-working/traps.h~	2016-02-11 21:48:16.000000000 -0500
+@@ -0,0 +1,38 @@
++// x86 trap and interrupt constants.
++
++// Processor-defined:
++#define T_DIVIDE         0      // divide error
++#define T_DEBUG          1      // debug exception
++#define T_NMI            2      // non-maskable interrupt
++#define T_BRKPT          3      // breakpoint
++#define T_OFLOW          4      // overflow
++#define T_BOUND          5      // bounds check
++#define T_ILLOP          6      // illegal opcode
++#define T_DEVICE         7      // device not available
++#define T_DBLFLT         8      // double fault
++// #define T_COPROC      9      // reserved (not used since 486)
++#define T_TSS           10      // invalid task switch segment
++#define T_SEGNP         11      // segment not present
++#define T_STACK         12      // stack exception
++#define T_GPFLT         13      // general protection fault
++#define T_PGFLT         14      // page fault
++// #define T_RES        15      // reserved
++#define T_FPERR         16      // floating point error
++#define T_ALIGN         17      // aligment check
++#define T_MCHK          18      // machine check
++#define T_SIMDERR       19      // SIMD floating point error
++
++// These are arbitrarily chosen, but with care not to overlap
++// processor defined exceptions or interrupt vectors.
++#define T_SYSCALL       64      // system call
++#define T_DEFAULT      500      // catchall
++
++#define T_IRQ0          32      // IRQ 0 corresponds to int T_IRQ
++
++#define IRQ_TIMER        0
++#define IRQ_KBD          1
++#define IRQ_COM1         4
++#define IRQ_IDE         14
++#define IRQ_ERROR       19
++#define IRQ_SPURIOUS    31
++
+diff -Nur xv6-cs550-2016,1s-p1-baseline/user.h xv6-cs550-2016,1s-p2-working/user.h
+--- xv6-cs550-2016,1s-p1-baseline/user.h	2016-02-11 21:48:16.000000000 -0500
++++ xv6-cs550-2016,1s-p2-working/user.h	2016-03-11 04:23:39.558601000 -0500
+@@ -23,7 +23,109 @@
+ char* sbrk(int);
+ int sleep(int);
+ int uptime(void);
++int date(struct rtcdate *);
++int ls_call01(char*);
++int ls_call02(char*);
++int ls_call03(char*);
++int ls_call04(char*);
++int ls_call05(char*);
++int ls_call06(char*);
++int ls_call07(char*);
++int ls_call08(char*);
++int ls_call09(char*);
++int ls_call10(char*);
++int ls_call11(char*);
++int ls_call12(char*);
++int ls_call13(char*);
++int ls_call14(char*);
++int ls_call15(char*);
++int ls_call16(char*);
++int ls_call17(char*);
++int ls_call18(char*);
++int ls_call19(char*);
++int ls_call20(char*);
++int ls_call21(char*);
++int ls_call22(char*);
++int ls_call23(char*);
++int ls_call24(char*);
++int ls_call25(char*);
++int ls_call26(char*);
++int ls_call27(char*);
++int ls_call28(char*);
++int ls_call29(char*);
++int ls_call30(char*);
++int ls_call31(char*);
++int ls_call32(char*);
++int ls_call33(char*);
++int ls_call34(char*);
++int ls_call35(char*);
++int ls_call36(char*);
++int ls_call37(char*);
++int ls_call38(char*);
++int ls_call39(char*);
++int ls_call40(char*);
++int ls_call41(char*);
++int ls_call42(char*);
++int ls_call43(char*);
++int ls_call44(char*);
++int ls_call45(char*);
++int ls_call46(char*);
++int ls_call47(char*);
++int ls_call48(char*);
++int ls_call49(char*);
++int ls_call50(char*);
+ 
++
++int ht_call01(char*);
++int ht_call02(char*);
++int ht_call03(char*);
++int ht_call04(char*);
++int ht_call05(char*);
++int ht_call06(char*);
++int ht_call07(char*);
++int ht_call08(char*);
++int ht_call09(char*);
++int ht_call10(char*);
++int ht_call11(char*);
++int ht_call12(char*);
++int ht_call13(char*);
++int ht_call14(char*);
++int ht_call15(char*);
++int ht_call16(char*);
++int ht_call17(char*);
++int ht_call18(char*);
++int ht_call19(char*);
++int ht_call20(char*);
++int ht_call21(char*);
++int ht_call22(char*);
++int ht_call23(char*);
++int ht_call24(char*);
++int ht_call25(char*);
++int ht_call26(char*);
++int ht_call27(char*);
++int ht_call28(char*);
++int ht_call29(char*);
++int ht_call30(char*);
++int ht_call31(char*);
++int ht_call32(char*);
++int ht_call33(char*);
++int ht_call34(char*);
++int ht_call35(char*);
++int ht_call36(char*);
++int ht_call37(char*);
++int ht_call38(char*);
++int ht_call39(char*);
++int ht_call40(char*);
++int ht_call41(char*);
++int ht_call42(char*);
++int ht_call43(char*);
++int ht_call44(char*);
++int ht_call45(char*);
++int ht_call46(char*);
++int ht_call47(char*);
++int ht_call48(char*);
++int ht_call49(char*);
++int ht_call50(char*);
+ // ulib.c
+ int stat(char*, struct stat*);
+ char* strcpy(char*, char*);
+diff -Nur xv6-cs550-2016,1s-p1-baseline/user.h~ xv6-cs550-2016,1s-p2-working/user.h~
+--- xv6-cs550-2016,1s-p1-baseline/user.h~	1969-12-31 19:00:00.000000000 -0500
++++ xv6-cs550-2016,1s-p2-working/user.h~	2016-03-11 04:23:34.830601000 -0500
+@@ -0,0 +1,141 @@
++struct stat;
++struct rtcdate;
++
++// system calls
++int fork(void);
++int exit(void) __attribute__((noreturn));
++int wait(void);
++int pipe(int*);
++int write(int, void*, int);
++int read(int, void*, int);
++int close(int);
++int kill(int);
++int exec(char*, char**);
++int open(char*, int);
++int mknod(char*, short, short);
++int unlink(char*);
++int fstat(int fd, struct stat*);
++int link(char*, char*);
++int mkdir(char*);
++int chdir(char*);
++int dup(int);
++int getpid(void);
++char* sbrk(int);
++int sleep(int);
++int uptime(void);
++int date(struct rtcdate *);
++int ls_call01(char*);
++int ls_call02(char*);
++int ls_call03(char*);
++int ls_call04(char*);
++int ls_call05(char*);
++int ls_call06(char*);
++int ls_call07(char*);
++int ls_call08(char*);
++int ls_call09(char*);
++int ls_call10(char*);
++int ls_call11(char*);
++int ls_call12(char*);
++int ls_call13(char*);
++int ls_call14(char*);
++int ls_call15(char*);
++int ls_call16(char*);
++int ls_call17(char*);
++int ls_call18(char*);
++int ls_call19(char*);
++int ls_call20(char*);
++int ls_call21(char*);
++int ls_call22(char*);
++int ls_call23(char*);
++int ls_call24(char*);
++int ls_call25(char*);
++int ls_call26(char*);
++int ls_call27(char*);
++int ls_call28(char*);
++int ls_call29(char*);
++int ls_call30(char*);
++int ls_call31(char*);
++int ls_call32(char*);
++int ls_call33(char*);
++int ls_call34(char*);
++int ls_call35(char*);
++int ls_call36(char*);
++int ls_call37(char*);
++int ls_call38(char*);
++int ls_call39(char*);
++int ls_call40(char*);
++int ls_call41(char*);
++int ls_call42(char*);
++int ls_call43(char*);
++int ls_call44(char*);
++int ls_call45(char*);
++int ls_call46(char*);
++int ls_call47(char*);
++int ls_call48(char*);
++int ls_call49(char*);
++int ls_call50(char*);
++
++
++int ht_call01(char*);
++int ht_call02(char*);
++int ht_call03(char*);
++int ht_call04(char*);
++int ht_call05(char*);
++int ht_call06(char*);
++int ht_call07(char*);
++int ht_call08(char*);
++int ht_call09(char*);
++int ht_call10(char*);
++int ht_call11(char*);
++int ht_call12(char*);
++int ht_call13(char*);
++int ht_call14(char*);
++int ht_call15(char*);
++int ht_call16(char*);
++int ht_call17(char*);
++int ht_call18(char*);
++int ht_call19(char*);
++int ht_call20(char*);
++int ht_call21(char*);
++int ht_call22(char*);
++int ht_call23(char*);
++int ht_call24(char*);
++int ht_call25(char*);
++int ht_call26(char*);
++int ht_call27(char*);
++int ht_call28(char*);
++int ht_call29(char*);
++int ht_call30(char*);
++int ht_call31(char*);
++int ht_call32(char*);
++int ht_call33(char*);
++int ht_call34(char*);
++int ht_call35(char*);
++int ht_call36(char*);
++int ht_call37(char*);
++int ht_call38(char*);
++int ht_call39(char*);
++int ht_call40(char*);
++int ht_call41(char*);
++int ht_call42(char*);
++int ht_call43(char*);
++int ht_call44(char*);
++int ht_call45(char*);
++int ht_call46(char*);
++int ht_call47(char*);
++int ht_call48(char*);
++int ht_call49(char*);
++int ht_call50(char*);
++// ulib.c
++int stat(char*, struct stat*);
++char* strcpy(char*, char*);
++void *memmove(void*, void*, int);
++char* strchr(const char*, char c);
++int strcmp(const char*, const char*);
++void printf(int, char*, ...);
++char* gets(char*, int max);
++uint strlen(char*);
++void* memset(void*, int, uint);
++void* malloc(uint);
++void free(void*);
++int atoi(const char*);
+diff -Nur xv6-cs550-2016,1s-p1-baseline/usys.S xv6-cs550-2016,1s-p2-working/usys.S
+--- xv6-cs550-2016,1s-p1-baseline/usys.S	2016-02-11 21:48:16.000000000 -0500
++++ xv6-cs550-2016,1s-p2-working/usys.S	2016-03-11 20:17:13.675673000 -0500
+@@ -7,7 +7,18 @@
+     movl $SYS_ ## name, %eax; \
+     int $T_SYSCALL; \
+     ret
+-
++#define LSCALL(name) \
++  .globl name; \
++  name: \
++    movl $LS_ ## name, %eax; \
++    int $L_SYSCALL; \
++    ret
++#define HTCALL(name) \
++  .globl name; \
++  name: \
++    movl $HT_ ## name, %eax; \
++    int $H_SYSCALL; \
++    ret
+ SYSCALL(fork)
+ SYSCALL(exit)
+ SYSCALL(wait)
+@@ -29,3 +40,89 @@
+ SYSCALL(sbrk)
+ SYSCALL(sleep)
+ SYSCALL(uptime)
++SYSCALL(date)
++LSCALL(ls_call01)
++LSCALL(ls_call02)
++LSCALL(ls_call03)
++LSCALL(ls_call04)
++LSCALL(ls_call05)
++LSCALL(ls_call06)
++LSCALL(ls_call07)
++LSCALL(ls_call08)
++LSCALL(ls_call09)
++LSCALL(ls_call10)
++LSCALL(ls_call11)
++LSCALL(ls_call12)
++LSCALL(ls_call13)
++LSCALL(ls_call14)
++LSCALL(ls_call15)
++LSCALL(ls_call16)
++LSCALL(ls_call17)
++LSCALL(ls_call18)
++LSCALL(ls_call19)
++LSCALL(ls_call20)
++LSCALL(ls_call21)
++LSCALL(ls_call22)
++LSCALL(ls_call23)
++LSCALL(ls_call24)
++LSCALL(ls_call25)
++LSCALL(ls_call26)
++LSCALL(ls_call27)
++LSCALL(ls_call28)
++LSCALL(ls_call29)
++LSCALL(ls_call30)
++LSCALL(ls_call31)
++LSCALL(ls_call32)
++LSCALL(ls_call33)
++LSCALL(ls_call34)
++LSCALL(ls_call35)
++LSCALL(ls_call36)
++LSCALL(ls_call37)
++LSCALL(ls_call38)
++LSCALL(ls_call39)
++LSCALL(ls_call40)
++LSCALL(ls_call41)
++LSCALL(ls_call42)
++LSCALL(ls_call43)
++LSCALL(ls_call44)
++LSCALL(ls_call45)
++LSCALL(ls_call46)
++LSCALL(ls_call47)
++LSCALL(ls_call48)
++LSCALL(ls_call49)
++LSCALL(ls_call50)
++
++HTCALL(ht_call01)
++HTCALL(ht_call02)
++HTCALL(ht_call03)
++HTCALL(ht_call04)
++HTCALL(ht_call05)
++HTCALL(ht_call06)
++HTCALL(ht_call07)
++HTCALL(ht_call08)
++HTCALL(ht_call09)
++HTCALL(ht_call10)
++HTCALL(ht_call11)
++HTCALL(ht_call12)
++HTCALL(ht_call13)
++HTCALL(ht_call14)
++HTCALL(ht_call15)
++HTCALL(ht_call16)
++HTCALL(ht_call17)
++HTCALL(ht_call18)
++HTCALL(ht_call19)
++HTCALL(ht_call20)
++HTCALL(ht_call21)
++HTCALL(ht_call22)
++HTCALL(ht_call23)
++HTCALL(ht_call24)
++HTCALL(ht_call25)
++HTCALL(ht_call26)
++HTCALL(ht_call27)
++HTCALL(ht_call28)
++HTCALL(ht_call29)
++HTCALL(ht_call30)
++HTCALL(ht_call31)
++HTCALL(ht_call32)
++HTCALL(ht_call33)
++HTCALL(ht_call34)
+diff -Nur xv6-cs550-2016,1s-p1-baseline/usys.S~ xv6-cs550-2016,1s-p2-working/usys.S~
+--- xv6-cs550-2016,1s-p1-baseline/usys.S~	1969-12-31 19:00:00.000000000 -0500
++++ xv6-cs550-2016,1s-p2-working/usys.S~	2016-03-11 18:08:04.643860000 -0500
+@@ -0,0 +1,144 @@
++#include "syscall.h"
++#include "traps.h"
++
++#define SYSCALL(name) \
++  .globl name; \
++  name: \
++    movl $SYS_ ## name, %eax; \
++    int $T_SYSCALL; \
++    ret
++#define LSCALL(name) \
++  .globl name; \
++  name: \
++    movl $LS_ ## name, %eax; \
++    int $L_SYSCALL; \
++    ret
++#define HTCALL(name) \
++  .globl name; \
++  name: \
++    movl $HT_ ## name, %eax; \
++    int $H_SYSCALL; \
++    ret
++SYSCALL(fork)
++SYSCALL(exit)
++SYSCALL(wait)
++SYSCALL(pipe)
++SYSCALL(read)
++SYSCALL(write)
++SYSCALL(close)
++SYSCALL(kill)
++SYSCALL(exec)
++SYSCALL(open)
++SYSCALL(mknod)
++SYSCALL(unlink)
++SYSCALL(fstat)
++SYSCALL(link)
++SYSCALL(mkdir)
++SYSCALL(chdir)
++SYSCALL(dup)
++SYSCALL(getpid)
++SYSCALL(sbrk)
++SYSCALL(sleep)
++SYSCALL(uptime)
++SYSCALL(date)
++LSCALL(ls_call01)
++LSCALL(ls_call02)
++LSCALL(ls_call03)
++LSCALL(ls_call04)
++LSCALL(ls_call05)
++LSCALL(ls_call06)
++LSCALL(ls_call07)
++LSCALL(ls_call08)
++LSCALL(ls_call09)
++LSCALL(ls_call10)
++LSCALL(ls_call11)
++LSCALL(ls_call12)
++LSCALL(ls_call13)
++LSCALL(ls_call14)
++LSCALL(ls_call15)
++LSCALL(ls_call16)
++LSCALL(ls_call17)
++LSCALL(ls_call18)
++LSCALL(ls_call19)
++LSCALL(ls_call20)
++LSCALL(ls_call21)
++LSCALL(ls_call22)
++LSCALL(ls_call23)
++LSCALL(ls_call24)
++LSCALL(ls_call25)
++LSCALL(ls_call26)
++LSCALL(ls_call27)
++LSCALL(ls_call28)
++LSCALL(ls_call29)
++LSCALL(ls_call30)
++LSCALL(ls_call31)
++LSCALL(ls_call32)
++LSCALL(ls_call33)
++LSCALL(ls_call34)
++LSCALL(ls_call35)
++LSCALL(ls_call36)
++LSCALL(ls_call37)
++LSCALL(ls_call38)
++LSCALL(ls_call39)
++LSCALL(ls_call40)
++LSCALL(ls_call41)
++LSCALL(ls_call42)
++LSCALL(ls_call43)
++LSCALL(ls_call44)
++LSCALL(ls_call45)
++LSCALL(ls_call46)
++LSCALL(ls_call47)
++LSCALL(ls_call48)
++LSCALL(ls_call49)
++LSCALL(ls_call50)
++
++HTCALL(ht_call01)
++HTCALL(ht_call02)
++HTCALL(ht_call03)
++HTCALL(ht_call04)
++HTCALL(ht_call05)
++HTCALL(ht_call06)
++HTCALL(ht_call07)
++HTCALL(ht_call08)
++HTCALL(ht_call09)
++HTCALL(ht_call10)
++HTCALL(ht_call11)
++HTCALL(ht_call12)
++HTCALL(ht_call13)
++HTCALL(ht_call14)
++HTCALL(ht_call15)
++HTCALL(ht_call16)
++HTCALL(ht_call17)
++HTCALL(ht_call18)
++HTCALL(ht_call19)
++HTCALL(ht_call20)
++HTCALL(ht_call21)
++HTCALL(ht_call22)
++HTCALL(ht_call23)
++HTCALL(ht_call24)
++HTCALL(ht_call25)
++HTCALL(ht_call26)
++HTCALL(ht_call27)
++HTCALL(ht_call28)
++HTCALL(ht_call29)
++HTCALL(ht_call30)
++HTCALL(ht_call31)
++HTCALL(ht_call32)
++HTCALL(ht_call33)
++HTCALL(ht_call34)
++/*HTCALL(ht_call35)
++HTCALL(ht_call36)
++HTCALL(ht_call37)
++HTCALL(ht_call38)
++HTCALL(ht_call39)
++HTCALL(ht_call40)
++HTCALL(ls_call41)
++HTCALL(ls_call42)
++HTCALL(ls_call43)
++HTCALL(ls_call44)
++HTCALL(ls_call45)
++HTCALL(ls_call46)
++HTCALL(ls_call47)
++HTCALL(ls_call48)
++HTCALL(ls_call49)
++HTCALL(ls_call50)*/
